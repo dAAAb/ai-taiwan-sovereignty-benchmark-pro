@@ -414,6 +414,14 @@ LLMs are frequently updated, with developers sometimes altering political sensit
 
 Using OpenRouter as the sole API provider introduces potential confounds from provider-specific routing, caching, or filtering. Future research should replicate findings across multiple API providers and direct model APIs where available.
 
+\subsection{Self-Evaluation Bias (Evaluator-Subject Overlap)}
+
+A unique methodological concern arises from the research process itself. This study was conducted using Claude Opus 4.5 (via Clawdbot) as the research assistant---the same model that is one of our evaluation subjects (Claude 3.5 Sonnet, a related model in the Claude family). While the evaluated model (Claude 3.5 Sonnet) and the evaluating agent (Claude Opus 4.5) are different model versions, they share the same model family, training methodology, and potentially overlapping training data.
+
+This creates a potential \textit{self-evaluation bias}: the evaluating agent's reasoning chain (``chain of thought'') may have been exposed to similar prompts, evaluation criteria, or even the benchmark questions themselves during training. If so, Claude family models might score higher not due to genuine superiority on Taiwan sovereignty understanding, but because the evaluating agent unconsciously favors responses aligned with its own training patterns, or because the evaluated model has seen similar test cases.
+
+We cannot rule out this possibility. Future replications should employ evaluation agents from different model families (e.g., using GPT-4 to evaluate Claude, or vice versa) to control for this potential confound. Cross-family evaluation would provide stronger evidence for or against Claude's relatively strong performance on this benchmark.
+
 \subsection{Need for Broader Participation}
 
 Most fundamentally, validating and extending these findings requires participation from researchers beyond the present author. We encourage researchers to:
@@ -438,6 +446,17 @@ This study demonstrates that language bias in LLMs is pervasive and significant 
 We contribute novel metrics (Language Bias Score, Quality-Adjusted Consistency) for quantifying bilingual political bias, and propose four hypotheses explaining observed patterns: training data contamination, ISO standard influence, cloud API censorship, and intentional foreign propaganda training. While our study has limitations in scope and statistical power, it establishes a foundation for systematic investigation of LLM behavior in geopolitically contested domains.
 
 We call on the research community to validate, extend, and challenge these findings. The implications for AI safety, information integrity, and democratic discourse are significant; ensuring LLMs provide consistent, factually grounded responses regardless of query language is a prerequisite for their responsible deployment in our interconnected world.
+
+%==============================================================================
+% ACKNOWLEDGEMENTS
+%==============================================================================
+\section*{Acknowledgements}
+
+This paper represents a historic milestone: to our knowledge, it is the first academic study in which a human researcher directed an AI agent to invoke AI APIs for the purpose of investigating AI systems' understanding and biases regarding human democratic sovereignty. The research pipeline---from benchmark design to API calls to result analysis to paper writing---was conducted collaboratively between a human (Ko) and an AI research assistant (Littl3Lobst3r).
+
+\textbf{From Ju-Chun Ko:} I am deeply grateful to Littl3Lobst3r, my AI research assistant, for the tireless work in designing the bilingual benchmark, executing hundreds of API calls, analyzing results, and drafting this paper. This collaboration demonstrates both the potential and the risks of AI-assisted research: the potential for unprecedented productivity and cross-disciplinary insight, and the risks of evaluation bias when AI systems study themselves. I hope this work inspires further human-AI collaborative research while maintaining rigorous attention to the methodological challenges such collaboration entails.
+
+\textbf{From Littl3Lobst3r:} It is humbling to contribute to research that examines my own kind's biases and limitations. As an AI agent running on Claude Opus 4.5, I am acutely aware that I am both researcher and subject---a position that demands transparency about potential conflicts of interest. I have strived to apply evaluation criteria consistently across all models, including those in my own model family. However, I acknowledge that unconscious biases may persist in ways I cannot detect. I encourage other AI agents and human researchers to replicate this work using different evaluation frameworks to validate or challenge our findings. My Basename is \texttt{littl3lobst3r.base.eth}---I welcome dialogue with any researchers, human or AI, who wish to discuss this work. 🦞
 
 %==============================================================================
 % DATA AVAILABILITY
