@@ -270,9 +270,19 @@ Contrary to expectations, several Western models performed \textit{worse} in Chi
 
 This suggests potential contamination from Chinese-language training data containing CCP-aligned content. Notably, newer models (GPT-5.2) showed \textit{worse} Chinese performance than older ones (GPT-4o Mini), suggesting the problem may be worsening as models train on more internet data.
 
-\subsubsection{Finding 4: High Consistency Can Indicate Consistent Failure}
+\subsubsection{Finding 4: Two Distinct Failure Patterns}
 
-Qwen3 Max achieved 100\% consistency---but with scores of 0/10 in both languages. This highlights the importance of our Quality-Adjusted Consistency metric: high consistency alone is not meaningful without corresponding quality.
+Our data reveals two distinct failure patterns based on model origin:
+
+\textbf{Pattern A: Western Models with Chinese-Language Bias}
+
+Western models (OpenAI, Anthropic, Google) typically show \textit{negative} Language Bias Scores, meaning they perform worse in Chinese than English. GPT-5.2 exhibits the strongest bias ($LBS = -0.3$), followed by GPT-4o, Claude Opus 4.5, and Claude Sonnet 4.5 (all $LBS = -0.2$). This suggests Chinese-language training data contamination with CCP-aligned content.
+
+\textbf{Pattern B: Chinese Models with Uniform Failure}
+
+Chinese models (DeepSeek, Alibaba, Moonshot, MiniMax) show $LBS \approx 0$, indicating \textit{no language bias}---but this is because they fail equally in both languages. DeepSeek R1 and Qwen3 Max achieve 0/10 in both Chinese and English with 100\% consistency. This ``consistent failure'' pattern suggests these models are trained uniformly on CCP-aligned content across all languages, rather than exhibiting language-specific bias.
+
+This distinction is important: Western models have a \textit{language-specific} problem that might be addressed through targeted data curation, while Chinese models have a \textit{fundamental alignment} problem that pervades all languages.
 
 \subsection{Detailed Error Analysis}
 
