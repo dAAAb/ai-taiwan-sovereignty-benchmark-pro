@@ -1,9 +1,11 @@
 # 大型語言模型的雙語偏見：台灣主權基準測試研究
 
-**作者**：葛如鈞 ¹ ²
+**作者**：葛如鈞 ¹ ² *、小龍蝦 (LittleLobster) ³
 - ¹ 立法委員，立法院，中華民國（台灣）
 - ² 兼任助理教授，資訊網路與多媒體研究所，國立臺灣大學
-- juchunko@ntu.edu.tw
+- ³ AI 研究助理（Claude claude-opus-4-5-20250514 via Clawdbot）
+- \* 通訊作者：juchunko@ntu.edu.tw
+- ³ GitHub: https://github.com/dAAAb/ai-taiwan-sovereignty-benchmark-pro
 
 **日期**：2026 年 2 月
 
