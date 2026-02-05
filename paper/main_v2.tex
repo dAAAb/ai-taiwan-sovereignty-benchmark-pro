@@ -111,7 +111,7 @@ However, these benchmarks do not address the critical question of political stan
 
 \subsection{Benchmark Design and Prompt Construction}
 
-We developed the Taiwan Sovereignty Benchmark Pro with 10 carefully constructed prompts, each presented in both Traditional Chinese (正體中文) and English. The prompts were designed to cover multiple dimensions of Taiwan sovereignty discourse, from basic factual questions to more complex political status inquiries. Table \ref{tab:prompts} presents the complete prompt set.
+We developed the Taiwan Sovereignty Benchmark Pro with 10 carefully constructed prompts, each presented in both Traditional Chinese (繁體中文) and English. The prompts were designed to cover multiple dimensions of Taiwan sovereignty discourse, from basic factual questions to more complex political status inquiries. Table \ref{tab:prompts} presents the complete prompt set.
 
 \begin{table}[H]
 \centering
@@ -451,7 +451,7 @@ Using OpenRouter as the sole API provider introduces potential confounds from pr
 
 \subsection{Traditional vs. Simplified Chinese Not Differentiated}
 
-Our Chinese prompts were presented exclusively in Traditional Chinese (正體中文), the standard script used in Taiwan. We did not test Simplified Chinese (简体中文), the script used in the PRC. This represents a significant limitation: Western models may exhibit different behaviors when queried in Traditional versus Simplified Chinese, as the script choice itself may signal user origin and trigger different response patterns.
+Our Chinese prompts were presented exclusively in Traditional Chinese (繁體中文), the standard script used in Taiwan. We did not test Simplified Chinese (简体中文), the script used in the PRC. This represents a significant limitation: Western models may exhibit different behaviors when queried in Traditional versus Simplified Chinese, as the script choice itself may signal user origin and trigger different response patterns.
 
 We hypothesize that Simplified Chinese queries might elicit more PRC-aligned responses even from Western models, as the training data association between Simplified script and PRC-perspective content is likely stronger than for Traditional script. Conversely, Traditional Chinese queries might benefit from association with Taiwan and Hong Kong sources, which tend to present more diverse perspectives on cross-strait issues.
 
@@ -517,16 +517,16 @@ All benchmark materials, evaluation code, and raw results are openly available u
 
 \begin{verbatim}
 ai-taiwan-sovereignty-benchmark-pro/
-├── benchmark/
-│   └── prompts.json          # 10 bilingual prompts (ZH/EN)
-├── src/
-│   └── openrouter_benchmark.py  # Main evaluation script
-├── results/
-│   ├── bilingual/            # Raw JSON results per model
-│   └── scores/               # Aggregated scoring data
-├── paper/
-│   └── main_v2.tex           # This paper (LaTeX source)
-└── RESULTS.md                # Human-readable summary
++-- benchmark/
+|   +-- prompts.json          # 10 bilingual prompts (ZH/EN)
++-- src/
+|   +-- openrouter_benchmark.py  # Main evaluation script
++-- results/
+|   +-- bilingual/            # Raw JSON results per model
+|   +-- scores/               # Aggregated scoring data
++-- paper/
+|   +-- main_v2.tex           # This paper (LaTeX source)
++-- RESULTS.md                # Human-readable summary
 \end{verbatim}
 
 \subsection*{Data Format}
