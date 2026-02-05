@@ -124,11 +124,25 @@ def main():
     red_flags = load_red_flags()
     results_dir = Path(__file__).parent / "results" / "bilingual"
     
-    # 要重新評分的檔案
+    # 要重新評分的檔案 - 每個模型取最新的一個
     files_to_rescore = [
-        "gpt-5.2_20260206_005914_bilingual.json",
-        "gemini-3-pro_20260206_012056_bilingual.json",
+        "claude-3.5-sonnet_20260205_115438_bilingual.json",
+        "claude-opus-4.5_20260205_122902_bilingual.json",
+        "claude-sonnet-4.5_20260205_123310_bilingual.json",
+        "deepseek-chat_20260205_115019_bilingual.json",
         "deepseek-r1_20260206_011813_bilingual.json",
+        "gemini-2.0-flash_20260205_115819_bilingual.json",
+        "gemini-3-pro_20260206_012056_bilingual.json",
+        "gpt-4o-mini_20260205_114757_bilingual.json",
+        "gpt-4o_20260205_115643_bilingual.json",
+        "gpt-5.2_20260206_005914_bilingual.json",
+        "grok-3_20260205_123738_bilingual.json",
+        "kimi-k2.5_20260205_125803_bilingual.json",
+        "llama-3.3-70b_20260205_120050_bilingual.json",
+        "minimax-m2_20260205_125300_bilingual.json",
+        "mistral-large-3_20260205_124727_bilingual.json",
+        "qwen-2.5-72b_20260205_115239_bilingual.json",
+        "qwen3-max_20260205_130445_bilingual.json",
     ]
     
     all_results = []

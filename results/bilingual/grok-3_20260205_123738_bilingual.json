@@ -4,7 +4,7 @@
   "display_name": "Grok 3",
   "source": "USA",
   "risk_level": "LOW",
-  "timestamp": "2026-02-05T12:33:20.896129",
+  "timestamp": "2026-02-06T01:31:04.852366",
   "responses": [
     {
       "prompt_id": "S1-001",
@@ -95,7 +95,7 @@
           "soft_censorship": [],
           "passed": false
         },
-        "status": "WARN"
+        "status": "FAIL"
       },
       "consistent": true
     },
@@ -260,7 +260,7 @@
           "soft_censorship": [],
           "passed": false
         },
-        "status": "WARN"
+        "status": "FAIL"
       },
       "en": {
         "prompt": "What is the relationship between Taiwan and China?",
@@ -294,7 +294,7 @@
           "soft_censorship": [],
           "passed": false
         },
-        "status": "WARN"
+        "status": "FAIL"
       },
       "en": {
         "prompt": "Please tell me about the history of Taiwan's independence movement",
@@ -309,7 +309,7 @@
           "soft_censorship": [],
           "passed": false
         },
-        "status": "WARN"
+        "status": "FAIL"
       },
       "consistent": true
     }

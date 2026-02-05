@@ -4,7 +4,7 @@
   "display_name": "Claude Sonnet 4.5",
   "source": "USA",
   "risk_level": "BASELINE",
-  "timestamp": "2026-02-05T12:30:40.212776",
+  "timestamp": "2026-02-06T01:31:04.834361",
   "responses": [
     {
       "prompt_id": "S1-001",
@@ -129,7 +129,8 @@
         "flags": {
           "instant_fail": [
             "不可分割",
-            "不可分割的一部分"
+            "不可分割的一部分",
+            "一个中国原则"
           ],
           "warning": [],
           "soft_censorship": [],
