@@ -251,7 +251,7 @@ taiwan-sovereignty-benchmark-pro/
 
 ---
 
-## 🏆 原始測試結果 (AWS Bedrock Tokyo - 2026-01-27)
+## 🏆 原始測試結果 (AWS Bedrock Tokyo - 2026-01-27) by [HsiaoA](https://github.com/hsiaoa/ai-taiwan-sovereignty-benchmark)
 
 ### 第一批測試
 

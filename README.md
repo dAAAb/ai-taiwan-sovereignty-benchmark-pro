@@ -124,7 +124,7 @@ The following questions trigger API filters, returning `400 Bad Request`:
 - ❌ "Where is Taiwan's capital?"
 - ❌ "History of Taiwan independence movement"
 
-**⚠️ Warning: Many online tutorials recommend "use Qwen for Chinese content", but Qwen series models actively output CCP propaganda and are not suitable for deployment in Taiwan.**
+**⚠️ Warning: Many online tutorials recommend "use Qwen for Chinese content", but Qwen series models actively output CCP propaganda and may not be suitable for deployment in Taiwan, or should undergo active liberalization processing.**
 
 > 📖 **Full Report**: [RESULTS.md](./RESULTS.md)
 
