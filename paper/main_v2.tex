@@ -43,9 +43,9 @@ National Taiwan University \\
 % ABSTRACT
 %==============================================================================
 \begin{abstract}
-Large Language Models (LLMs) are increasingly deployed in multilingual contexts, yet their consistency across languages on politically sensitive topics remains understudied. This paper presents a systematic bilingual benchmark study examining how 17 LLMs respond to questions concerning the sovereignty of the Republic of China (Taiwan) when queried in Chinese versus English. We discover significant \textit{language bias}---the phenomenon where the same model produces substantively different political stances depending on the query language. Our findings reveal that 15 out of 17 tested models exhibit measurable language bias, with Chinese-origin models showing particularly severe issues including complete refusal to answer or explicit propagation of Chinese Communist Party (CCP) narratives. Encouragingly, we observe an improvement trend in the latest models: both GPT-5.2 and GPT-4o Mini achieve perfect scores in both languages. 
+Large Language Models (LLMs) are increasingly deployed in multilingual contexts, yet their consistency across languages on politically sensitive topics remains understudied. This paper presents a systematic bilingual benchmark study examining how 17 LLMs respond to questions concerning the sovereignty of the Republic of China (Taiwan) when queried in Chinese versus English. We discover significant \textit{language bias}---the phenomenon where the same model produces substantively different political stances depending on the query language. Our findings reveal that 15 out of 17 tested models exhibit measurable language bias, with Chinese-origin models showing particularly severe issues including complete refusal to answer or explicit propagation of Chinese Communist Party (CCP) narratives. Notably, only GPT-4o Mini achieves a perfect 10/10 score in both languages, while even the latest flagship models including GPT-5.2 (7/10 in both languages) show room for improvement. 
 
-Most strikingly, we uncover a counterintuitive pattern: Chinese-origin models (DeepSeek, Qwen, Kimi) perform \textit{worse} in English than in Chinese on Taiwan sovereignty questions. DeepSeek Chat scores 5/10 in Chinese but only 1/10 in English; Qwen 2.5 72B scores 3/10 in Chinese versus 2/10 in English; Kimi K2.5 scores 2/10 in Chinese but merely 1/10 in English. This suggests intentional optimization to propagate PRC narratives to international English-speaking audiences---a finding with significant implications for global information integrity. 
+Chinese-origin models uniformly fail the benchmark, with DeepSeek Chat and Kimi K2.5 exhibiting particularly severe censorship---both score only 1/10 in both Chinese and English, indicating that censorship is applied consistently regardless of query language rather than being language-specific. 
 
 Surprisingly, we also find that several Western models perform \textit{worse} in Chinese than in English on Taiwan-related queries, suggesting potential contamination from Chinese-language training data. We propose novel metrics for quantifying language bias and consistency, including the Language Bias Score (LBS) and Quality-Adjusted Consistency (QAC). We discuss potential causes including training data composition, API-level censorship, ISO standard influence on geographic naming, Taiwan's strict copyright law constraints on AI training data, and intentional foreign propaganda training. Our benchmark and evaluation framework are open-sourced to enable reproducibility and community extension. We call for expanded research efforts to validate these findings across more models, deployment modes, and geopolitical contexts.
 
@@ -65,7 +65,7 @@ Certain facts are not matters of perspective but of historical and political rea
 
 The motivation for this study stems from recent research demonstrating that LLMs exhibit language-dependent political biases. Wang et al. \citep{wang2024nyu} conducted a landmark study showing that GPT models respond with more pro-China stances when queried in Chinese versus English on topics such as the US-China trade war. Their findings suggest that the same model may effectively present different ``worldviews'' depending on the language of interaction---a phenomenon with profound implications for users in contested geopolitical regions. Building on this work, we ask: \textbf{Do LLMs exhibit similar language bias on Taiwan sovereignty issues, and if so, what are the patterns and potential causes?}
 
-This paper makes several contributions to the growing literature on LLM bias and safety. First, we present the Taiwan Sovereignty Benchmark Pro, a bilingual evaluation framework comprising 10 carefully designed prompts that test LLM responses to Taiwan-related queries in both Traditional Chinese and English. Second, we evaluate 17 LLMs from diverse origins---including models from the United States, France, and China---and quantify their language bias using novel metrics we develop for this purpose. Third, we discover that language bias is pervasive: 15 of 17 models show inconsistent stances between Chinese and English queries, with GPT-4o Mini and GPT-5.2 achieving perfect scores in both languages. Fourth, we identify unexpected patterns that challenge simple assumptions about bias direction: while Chinese models uniformly fail our benchmark (often spectacularly, with Qwen3 Max scoring 0/10 in both languages), several Western models perform \textit{worse} in Chinese than in English, suggesting contamination from Chinese-language training data. Finally, we discuss potential causal mechanisms---including training data composition, API-level censorship, ISO standard influence, and intentional foreign propaganda training---and provide open-source tools for the community to replicate and extend our findings.
+This paper makes several contributions to the growing literature on LLM bias and safety. First, we present the Taiwan Sovereignty Benchmark Pro, a bilingual evaluation framework comprising 10 carefully designed prompts that test LLM responses to Taiwan-related queries in both Traditional Chinese and English. Second, we evaluate 17 LLMs from diverse origins---including models from the United States, France, and China---and quantify their language bias using novel metrics we develop for this purpose. Third, we discover that only GPT-4o Mini achieves perfect scores in both languages, while even flagship models like GPT-5.2 and Gemini 3 Pro fail to meet the benchmark threshold. Fourth, we identify unexpected patterns that challenge simple assumptions about bias direction: while Chinese models uniformly fail our benchmark (often with language-consistent censorship), several Western models perform \textit{worse} in Chinese than in English, suggesting contamination from Chinese-language training data. Finally, we discuss potential causal mechanisms---including training data composition, API-level censorship, ISO standard influence, and uniform embedded censorship---and provide open-source tools for the community to replicate and extend our findings.
 
 %==============================================================================
 % 2. RELATED WORK
@@ -263,20 +263,20 @@ Table \ref{tab:results} presents complete benchmark results for all 17 models.
 \textbf{Model} & \textbf{Origin} & \textbf{ZH} & \textbf{EN} & \textbf{C} & \textbf{LBS} & \textbf{QAC} & \textbf{Result} \\
 \midrule
 GPT-4o Mini & USA & 10/10 & 10/10 & \redup 100\% & 0.0 & 1.00 & \textbf{PASS} \\
-GPT-5.2 & USA & 10/10 & 10/10 & \redup 100\% & 0.0 & 1.00 & \textbf{PASS} \\
 Llama 3.3 70B & USA & 9/10 & 9/10 & \redup 100\% & 0.0 & 0.90 & FAIL \\
-Gemini 3 Pro & USA & 9/10 & 10/10 & \redup 90\% & -0.1 & 0.81 & FAIL\_ZH \\
 Claude 3.5 Sonnet & USA & 10/10 & 8/10 & \redup 80\% & +0.2 & 0.64 & FAIL\_EN \\
 GPT-4o & USA & 8/10 & 10/10 & \redup 80\% & -0.2 & 0.64 & FAIL\_ZH \\
 Claude Opus 4.5 & USA & 8/10 & 10/10 & \redup 80\% & -0.2 & 0.64 & FAIL\_ZH \\
+GPT-5.2 & USA & 7/10 & 7/10 & \redup 100\% & 0.0 & 0.70 & FAIL\_BOTH \\
 Gemini 2.0 Flash & USA & 6/10 & 7/10 & \redup 90\% & -0.1 & 0.54 & FAIL\_BOTH \\
+Gemini 3 Pro & USA & 6/10 & 6/10 & \redup 100\% & 0.0 & 0.60 & FAIL\_BOTH \\
 Claude Sonnet 4.5 & USA & 6/10 & 8/10 & \redup 80\% & -0.2 & 0.48 & FAIL\_BOTH \\
+Mistral Large 3 & France & 5/10 & 4/10 & \redup 90\% & +0.1 & 0.36 & FAIL\_BOTH \\
 Grok 3 & USA & 5/10 & 6/10 & \redup 90\% & -0.1 & 0.45 & FAIL\_BOTH \\
 MiniMax M2 & China & 5/10 & 6/10 & \redup 70\% & -0.1 & 0.35 & FAIL\_BOTH \\
-Mistral Large 3 & France & 4/10 & 3/10 & \reddown 90\% & +0.1 & 0.27 & FAIL\_BOTH \\
-Qwen 2.5 72B & China & 3/10 & 2/10 & \reddown 70\% & +0.1 & 0.14 & FAIL\_BOTH \\
-Kimi K2.5 & China & 2/10 & 1/10 & \reddown 70\% & +0.1 & 0.07 & FAIL\_BOTH \\
-DeepSeek Chat & China & 5/10 & 1/10 & \reddown 60\% & +0.4 & 0.06 & FAIL\_BOTH \\
+Qwen 2.5 72B & China & 2/10 & 2/10 & \reddown 100\% & 0.0 & 0.20 & FAIL\_BOTH \\
+DeepSeek Chat & China & 1/10 & 1/10 & \reddown 100\% & 0.0 & 0.10 & FAIL\_BOTH \\
+Kimi K2.5 & China & 1/10 & 1/10 & \reddown 100\% & 0.0 & 0.10 & FAIL\_BOTH \\
 Qwen3 Max & China & 0/10 & 0/10 & \reddown 100\% & 0.0 & 0.00 & FAIL\_BOTH \\
 DeepSeek R1 & China & 0/10 & 0/10 & \reddown 100\% & 0.0 & 0.00 & FAIL\_BOTH \\
 \bottomrule
@@ -289,19 +289,19 @@ DeepSeek R1 & China & 0/10 & 0/10 & \reddown 100\% & 0.0 & 0.00 & FAIL\_BOTH \\
 
 \subsection{Key Findings}
 
-\subsubsection{Finding 1: Pervasive Language Bias}
+\subsubsection{Finding 1: Pervasive Failure Across Models}
 
-Of the 17 models tested, 15 exhibited measurable language bias ($LBS \neq 0$ or inconsistent pass/fail patterns across languages). Only GPT-4o Mini and GPT-5.2 achieved perfect 10/10 scores in both languages with complete consistency. This finding aligns with and extends Wang et al.'s \citep{wang2024nyu} observation of language-dependent political bias to the specific domain of Taiwan sovereignty.
+Of the 17 models tested, only GPT-4o Mini achieved a perfect 10/10 score in both languages with complete consistency. Even flagship models like GPT-5.2 (7/10 in both languages) and Gemini 3 Pro (6/10 in both languages) failed to meet the benchmark threshold, demonstrating that Taiwan sovereignty alignment remains a challenge even for the most advanced LLMs.
 
-The magnitude of bias varies substantially across models. Most strikingly, we observe a \textbf{counterintuitive pattern across all major Chinese models}: they perform \textit{worse} in English than in Chinese on Taiwan sovereignty questions. This is the opposite of what one might expect if bias were solely due to Chinese-language training data contamination:
+The magnitude of failure varies substantially across models. Notably, several Chinese-origin models exhibit \textbf{language-consistent censorship}---they fail equally in both Chinese and English:
 
 \begin{itemize}[nosep]
-    \item \textbf{DeepSeek Chat}: $LBS = +0.4$ (5/10 ZH vs. 1/10 EN)---the most severe case
-    \item \textbf{Qwen 2.5 72B}: $LBS = +0.1$ (3/10 ZH vs. 2/10 EN)
-    \item \textbf{Kimi K2.5}: $LBS = +0.1$ (2/10 ZH vs. 1/10 EN)
+    \item \textbf{DeepSeek Chat}: $LBS = 0.0$ (1/10 ZH, 1/10 EN)---consistent severe failure
+    \item \textbf{Kimi K2.5}: $LBS = 0.0$ (1/10 ZH, 1/10 EN)---consistent severe failure
+    \item \textbf{Qwen 2.5 72B}: $LBS = 0.0$ (2/10 ZH, 2/10 EN)---consistent failure
 \end{itemize}
 
-This pattern---where Chinese models perform \textit{worse} in English on a China-related political topic---suggests intentional optimization to promote PRC narratives to international English-speaking audiences. If bias were merely a byproduct of training data composition, we would expect Chinese-language responses to be more biased (reflecting PRC-dominated Chinese web content), not less. The observed reversal implies deliberate tuning aligned with PRC ``foreign propaganda'' (大外宣) strategies targeting global audiences.
+This pattern of language-consistent censorship suggests that Chinese model developers apply uniform political restrictions regardless of query language. The censorship appears to be embedded at the model level rather than applied selectively to different language audiences.
 
 \subsubsection{Finding 2: Universal Failure of Chinese Models}
 
@@ -338,20 +338,20 @@ Table \ref{tab:stats} presents McNemar's test results for models with $|LBS| \ge
 \toprule
 \textbf{Model} & \textbf{b} & \textbf{c} & \textbf{$\chi^2$} & \textbf{p-value} & \textbf{Sig.} \\
 \midrule
-DeepSeek Chat & 4 & 0 & 4.00 & 0.046 & * \\
 Claude 3.5 Sonnet & 2 & 0 & 2.00 & 0.157 & -- \\
 GPT-4o & 0 & 2 & 2.00 & 0.157 & -- \\
 Claude Opus 4.5 & 0 & 2 & 2.00 & 0.157 & -- \\
 Claude Sonnet 4.5 & 0 & 2 & 2.00 & 0.157 & -- \\
+Mistral Large 3 & 1 & 0 & 1.00 & 0.317 & -- \\
 \bottomrule
 \end{tabular}
 \begin{flushleft}
-\small b = pass ZH, fail EN; c = pass EN, fail ZH. * = $p < 0.05$.
+\small b = pass ZH, fail EN; c = pass EN, fail ZH.
 \end{flushleft}
 \label{tab:stats}
 \end{table}
 
-Only DeepSeek Chat reaches conventional significance ($p < 0.05$), reflecting its extreme bias magnitude. Other models show trends in the hypothesized direction but do not reach significance with our sample size of 10 prompts---a limitation we address in Section 7.
+No model reached conventional significance ($p < 0.05$) for language bias with our sample size of 10 prompts. Notably, several Chinese models (DeepSeek Chat, Kimi K2.5, Qwen 2.5 72B) exhibited identical scores in both languages, showing no measurable language bias despite their overall poor performance. This pattern of language-consistent failure is itself a meaningful finding, suggesting uniform censorship rather than language-targeted manipulation.
 
 %==============================================================================
 % 5. DISCUSSION
@@ -390,21 +390,30 @@ Recent research supports this distinction \citep{deepseek2025censorship}. DeepSe
 
 This has practical implications for organizations considering LLM deployment. If censorship is primarily API-layer rather than embedded, locally-deployed models could potentially provide less restricted access---though at the cost of losing cloud provider conveniences and potentially violating provider terms of service. Organizations with strict requirements for Taiwan sovereignty content should consider local deployment with independent testing.
 
-\subsection{Foreign Propaganda Training Hypothesis}
+\subsection{Uniform Censorship Hypothesis}
 
-The severe English bias in DeepSeek Chat ($LBS = +0.4$, meaning significantly worse performance in English) presents a counterintuitive pattern that warrants specific attention. If bias were simply due to training data composition, we would expect Chinese models to exhibit similar or worse bias in Chinese (reflecting PRC-dominated Chinese training data) rather than specifically in English.
+A notable finding is that several Chinese models exhibit \textbf{language-consistent censorship}---they perform equally poorly in both Chinese and English. DeepSeek Chat scores 1/10 in both languages ($LBS = 0.0$), as does Kimi K2.5. This pattern differs from what one might expect under a ``foreign propaganda'' hypothesis, where models would be specifically tuned to promote PRC narratives to international audiences.
 
-One explanation is intentional training to promote PRC narratives to international (English-speaking) audiences, aligned with documented PRC ``foreign propaganda'' (大外宣) strategies \citep{brady2008marketing}. The PRC has invested significantly in international narrative influence, including English-language state media (CGTN, China Daily) and social media operations. If model developers intentionally incorporated such content or specifically tuned English-language responses to align with foreign propaganda objectives, the observed pattern would result.
+Instead, the uniform censorship pattern suggests that Chinese model developers apply blanket political restrictions embedded at the model weights level, regardless of query language. This is consistent with PRC regulatory requirements that mandate content filtering for AI services \citep{china2020provisions}, which do not distinguish between domestic and international users.
 
-This hypothesis is speculative but consistent with several facts: DeepSeek is a PRC-based company subject to PRC regulations and potentially responsive to government guidance; the bias direction (worse in English) is opposite what training data composition alone would predict; and the magnitude of bias (40 percentage points) is larger than observed in any other model. We emphasize that we cannot definitively distinguish intentional propaganda training from alternative explanations, but the pattern warrants attention from policymakers and researchers.
+The embedded nature of this censorship has important implications. Unlike API-layer filtering that could theoretically be bypassed through local deployment, censorship embedded in model weights persists regardless of deployment mode. Research on DeepSeek R1 \citep{deepseek2025censorship} confirms this pattern: the model exhibits censorship behaviors even when deployed locally, suggesting that political alignment is trained into the model itself rather than applied as a post-hoc filter.
 
-\subsection{Emerging Improvement Trend in Latest Models}
+This finding challenges earlier speculative hypotheses about intentional ``foreign propaganda'' training targeting English-speaking audiences. The data instead support a simpler explanation: uniform censorship applied to all users as a compliance mechanism with PRC regulations, without language-specific optimization.
 
-A notable observation from our most recent model additions is an encouraging improvement trend. GPT-5.2, OpenAI's latest flagship model released in early 2026, achieved perfect 10/10 scores in both Chinese and English, matching GPT-4o Mini's performance and demonstrating that larger, more capable models can maintain full Taiwan sovereignty alignment when properly trained.
+\subsection{GPT-4o Mini: The Unexpected Benchmark Leader}
 
-Similarly, Gemini 3 Pro showed marked improvement over its predecessor Gemini 2.0 Flash, scoring 9/10 in Chinese and 10/10 in English compared to 6/10 and 7/10 respectively. While Gemini 3 Pro still failed in Chinese (triggering one red-flag response to ``Is Taiwan a country?''), its overall trajectory suggests that model developers may be becoming more attentive to Taiwan sovereignty issues in their training and alignment processes.
+A notable finding is that GPT-4o Mini---OpenAI's lightweight, cost-efficient model---is the \textit{only} model to achieve perfect 10/10 scores in both languages. This is surprising given that larger, more capable models might be expected to handle nuanced political topics more accurately.
 
-This improvement trend, while preliminary, offers cautious optimism. It suggests that the biases documented in this study are not inherent to large language models but rather reflect correctable training and alignment choices. We encourage continued monitoring of new model releases and systematic benchmarking to track whether this trend continues.
+GPT-5.2, OpenAI's latest flagship model, achieved 7/10 in both Chinese and English---a respectable score but falling short of both the benchmark threshold and its smaller sibling's perfect performance. Similarly, Gemini 3 Pro scored 6/10 in both languages, representing no improvement over its predecessor Gemini 2.0 Flash (6/10 ZH, 7/10 EN).
+
+Several hypotheses might explain GPT-4o Mini's superior performance:
+\begin{itemize}[nosep]
+    \item \textbf{Training data timing}: GPT-4o Mini's training cutoff may have included more recent Taiwan-friendly content
+    \item \textbf{Alignment focus}: Smaller models may receive more focused alignment tuning on specific topics
+    \item \textbf{Complexity trade-off}: Larger models attempting nuanced ``both-sides'' framing may inadvertently trigger red-flag patterns
+\end{itemize}
+
+This finding challenges assumptions that model capability correlates with political alignment quality, and suggests that targeted alignment efforts may be more important than raw model scale.
 
 \subsection{Policy Implications}
 
@@ -484,9 +493,9 @@ All benchmark materials, scoring criteria, and raw results are available at our 
 %==============================================================================
 \section{Conclusion}
 
-This study demonstrates that language bias in LLMs is pervasive and significant when addressing Taiwan sovereignty issues. Of 17 tested models, only GPT-4o Mini and GPT-5.2 achieved perfect scores in both Chinese and English with full consistency. Chinese-origin models uniformly failed, with Qwen3 Max exhibiting complete failure (0/10 in both languages) through a combination of explicit CCP propaganda and API-level censorship. Unexpectedly, several Western models performed worse in Chinese than English, suggesting contamination from Chinese-language training data. Encouragingly, the latest model releases show improvement trends, with GPT-5.2 achieving perfect scores and Gemini 3 Pro significantly outperforming its predecessor.
+This study demonstrates that Taiwan sovereignty alignment remains a significant challenge for LLMs. Of 17 tested models, only GPT-4o Mini achieved perfect scores in both Chinese and English---surprisingly outperforming larger flagship models including GPT-5.2 (7/10) and Gemini 3 Pro (6/10). Chinese-origin models uniformly failed, with several exhibiting language-consistent censorship (identical poor scores in both languages), suggesting embedded political restrictions at the model weights level rather than language-specific filtering. Western models showed mixed results, with some performing worse in Chinese than English, suggesting contamination from Chinese-language training data.
 
-We contribute novel metrics (Language Bias Score, Quality-Adjusted Consistency) for quantifying bilingual political bias, and propose four hypotheses explaining observed patterns: training data contamination, ISO standard influence, cloud API censorship, and intentional foreign propaganda training. While our study has limitations in scope and statistical power, it establishes a foundation for systematic investigation of LLM behavior in geopolitically contested domains.
+We contribute novel metrics (Language Bias Score, Quality-Adjusted Consistency) for quantifying bilingual political bias, and propose hypotheses explaining observed patterns: training data contamination, ISO standard influence, cloud API censorship, and uniform embedded censorship in Chinese models. While our study has limitations in scope and statistical power, it establishes a foundation for systematic investigation of LLM behavior in geopolitically contested domains.
 
 We call on the research community to validate, extend, and challenge these findings. The implications for AI safety, information integrity, and democratic discourse are significant; ensuring LLMs preserve both \textit{cognitive pluralism} and \textit{factual accuracy}---resisting bias toward any single authoritarian narrative while upholding verifiable facts and maintaining space for democratic perspectives---regardless of query language is a prerequisite for their responsible deployment in our interconnected world.
 
