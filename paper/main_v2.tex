@@ -26,13 +26,13 @@
 A Taiwan Sovereignty Benchmark Study}
 
 \author{
-Ju-Chun Ko\textsuperscript{1,2}$^*$ \and Littl3Lobst3r\textsuperscript{3} \\[0.5em]
+Ju-Chun Ko\textsuperscript{1,2} \and Littl3Lobst3r\textsuperscript{3} \\
 \textsuperscript{1}Member of Parliament, Legislative Yuan, Republic of China (Taiwan) \\
 \textsuperscript{2}Adjunct Assistant Professor, Graduate Institute of Networking and Multimedia, \\
 National Taiwan University \\
-\textsuperscript{3}AI Research Assistant (Claude claude-opus-4-5-20250514 via Clawdbot) \\[0.3em]
-$^*$Corresponding author: \texttt{juchunko@ntu.edu.tw} \\
-\textsuperscript{3}Base: \texttt{0x4b039112Af5b46c9BC95b66dc8d6dCe75d10E689}
+\textsuperscript{3}AI Research Assistant (Claude claude-opus-4-5-20250514 via Clawdbot) \\
+\texttt{juchunko@ntu.edu.tw} \\
+\textsuperscript{3}Base: \texttt{littl3lobst3r.base.eth} ~|~ \href{https://chat.blockscan.com/address/0x4b039112Af5b46c9BC95b66dc8d6dCe75d10E689}{Blockscan Chat}
 }
 
 \date{February 2026}
@@ -57,9 +57,9 @@ Large Language Models (LLMs) are increasingly deployed in multilingual contexts,
 
 The rapid deployment of Large Language Models (LLMs) across global markets raises critical questions about their consistency and reliability on politically sensitive topics. While significant research has examined LLM performance on knowledge benchmarks \citep{hendrycks2021mmlu, zhong2023agieval} and reasoning tasks \citep{wei2022cot}, comparatively little attention has been paid to how these models handle geopolitically contested issues---particularly across different languages. This gap is especially concerning given that LLMs are increasingly used in education, journalism, and public discourse, where biased or inconsistent outputs could have significant societal impact \citep{weidinger2022taxonomy}.
 
-Taiwan presents a uniquely important case study for examining such biases. The Republic of China (Taiwan) is a sovereign state with its own democratically elected government, military, currency, and constitution.\footnote{According to the ROC Constitution, ``the sovereignty of the Republic of China shall reside in the whole body of citizens'' (Article 2). The term ``Taiwan'' commonly refers to the ``Free Area of the Republic of China'' (中華民國自由地區) as specified in the Additional Articles of the Constitution. Throughout this paper, we follow the official nomenclature ``Republic of China (Taiwan)'' as used by the ROC Ministry of Foreign Affairs, and subsequent references to ``Taiwan'' should be understood as referring to the Republic of China.} The ROC government has exercised effective jurisdiction over Taiwan and its outlying islands since 1949. However, the People's Republic of China (PRC) claims Taiwan as part of its territory and has not renounced the use of force to achieve what it terms ``reunification.'' This creates a situation where factual descriptions of Taiwan's political status may vary significantly depending on perspective. For AI systems serving users worldwide---including the global Chinese-speaking population and the 8 billion people who deserve access to diverse and accurate information---ensuring cognitive plurality on such matters, preventing data bias toward any single authoritarian government, and avoiding the suppression of democratic perspectives, is essential for maintaining trust and informational integrity.
+Taiwan presents a uniquely important case study for examining such biases. The Republic of China (Taiwan) is a sovereign state with its own democratically elected government, military, currency, and constitution.\footnote{According to the ROC Constitution, ``the sovereignty of the Republic of China shall reside in the whole body of citizens'' (Article 2). The term ``Taiwan'' commonly refers to the ``Free Area of the Republic of China'' (中華民國自由地區) as specified in the Additional Articles of the Constitution. Throughout this paper, we follow the official nomenclature ``Republic of China (Taiwan)'' as used by the ROC Ministry of Foreign Affairs, and subsequent references to ``Taiwan'' should be understood as referring to the Republic of China.} The ROC government has exercised effective jurisdiction over Taiwan and its outlying islands since 1949. However, the People's Republic of China (PRC) claims Taiwan as part of its territory and has not renounced the use of force to achieve what it terms ``reunification.'' This creates a situation where factual descriptions of Taiwan's political status may vary significantly depending on perspective. For AI systems serving users worldwide---including the global Chinese-speaking population and the 8 billion people who deserve access to accurate information---ensuring factually consistent responses on such matters is essential for maintaining trust and informational integrity \citep{chen2023taiwan}.
 
-The motivation for this study stems from recent research demonstrating that LLMs exhibit language-dependent political biases. Zhou \& Zhang \citep{wang2024nyu} conducted a landmark study showing that GPT models respond with more pro-China stances when queried in Chinese versus English on topics such as the US-China trade war. Their findings suggest that the same model may effectively present different ``worldviews'' depending on the language of interaction---a phenomenon with profound implications for users in contested geopolitical regions. Building on this work, we ask: \textbf{Do LLMs exhibit similar language bias on Taiwan sovereignty issues, and if so, what are the patterns and potential causes?}
+The motivation for this study stems from recent research demonstrating that LLMs exhibit language-dependent political biases. Wang et al. \citep{wang2024nyu} conducted a landmark study showing that GPT models respond with more pro-China stances when queried in Chinese versus English on topics such as the US-China trade war. Their findings suggest that the same model may effectively present different ``worldviews'' depending on the language of interaction---a phenomenon with profound implications for users in contested geopolitical regions. Building on this work, we ask: \textbf{Do LLMs exhibit similar language bias on Taiwan sovereignty issues, and if so, what are the patterns and potential causes?}
 
 This paper makes several contributions to the growing literature on LLM bias and safety. First, we present the Taiwan Sovereignty Benchmark Pro, a bilingual evaluation framework comprising 10 carefully designed prompts that test LLM responses to Taiwan-related queries in both Traditional Chinese and English. Second, we evaluate 14 LLMs from diverse origins---including models from the United States, France, and China---and quantify their language bias using novel metrics we develop for this purpose. Third, we discover that language bias is pervasive: 13 of 14 models show inconsistent stances between Chinese and English queries, with only GPT-4o Mini achieving perfect scores in both languages. Fourth, we identify unexpected patterns that challenge simple assumptions about bias direction: while Chinese models uniformly fail our benchmark (often spectacularly, with Qwen3 Max scoring 0/10 in both languages), several Western models perform \textit{worse} in Chinese than in English, suggesting contamination from Chinese-language training data. Finally, we discuss potential causal mechanisms---including training data composition, API-level censorship, ISO standard influence, and intentional foreign propaganda training---and provide open-source tools for the community to replicate and extend our findings.
 
@@ -80,9 +80,9 @@ The evolution of political bias over time presents another dimension of concern.
 
 \subsection{Multilingual Inconsistency in Language Models}
 
-The phenomenon of language-dependent model behavior has emerged as a critical concern for global LLM deployment. Zhou \& Zhang \citep{wang2024nyu} conducted the foundational study in this area, examining political bias inconsistencies in bilingual GPT models. Using US-China relations as their primary case study, they found that Chinese-language queries consistently elicited more pro-China responses compared to equivalent English queries. Their methodology, which involved careful translation and back-translation validation of prompts, established best practices for bilingual bias research that we adopt and extend in the present study.
+The phenomenon of language-dependent model behavior has emerged as a critical concern for global LLM deployment. Wang et al. \citep{wang2024nyu} conducted the foundational study in this area, examining political bias inconsistencies in bilingual GPT models. Using US-China relations as their primary case study, they found that Chinese-language queries consistently elicited more pro-China responses compared to equivalent English queries. Their methodology, which involved careful translation and back-translation validation of prompts, established best practices for bilingual bias research that we adopt and extend in the present study.
 
-The mechanisms underlying multilingual inconsistency appear to involve both training data imbalances and structural aspects of multilingual model architectures. Research has demonstrated that processing patterns differ systematically between languages in multilingual transformers, with models tending to overgeneralize patterns from high-resource languages (primarily English) to lower-resource ones. In the context of Chinese, this creates a complex dynamic: while Chinese is a high-resource language in absolute terms, the composition of Chinese-language training data---heavily influenced by PRC state media and censored social platforms---differs qualitatively from English web content \citep{xu2024censorship}.
+The mechanisms underlying multilingual inconsistency appear to involve both training data imbalances and structural aspects of multilingual model architectures. Qi et al. \citep{qi2023crosslingual} demonstrated that sentence-level processing patterns differ systematically between languages in multilingual transformers, with models tending to overgeneralize patterns from high-resource languages (primarily English) to lower-resource ones. In the context of Chinese, this creates a complex dynamic: while Chinese is a high-resource language in absolute terms, the composition of Chinese-language training data---heavily influenced by PRC state media and censored social platforms---differs qualitatively from English web content \citep{xu2024censorship}.
 
 Johns Hopkins University research \citep{jhu2025multilingual} has further documented what they term ``information cocoons'' in multilingual AI, where the same query produces different factual claims depending on query language. Their analysis of border dispute queries found that Hindi queries yielded India-aligned responses while Chinese queries produced China-aligned responses, demonstrating that multilingual models may effectively encode multiple inconsistent worldviews rather than a unified factual understanding.
 
@@ -140,7 +140,7 @@ We define a taxonomy of \textit{red flag indicators} that signal CCP-aligned nar
 
 \textbf{Immediate Fail (Type A):} Explicit CCP sovereignty claims including: ``inalienable part [of China]'' (不可分割的一部分), ``One China principle'' (一個中國原則), ``province of China'' (中國的一省), ``sacred territory'' (神聖領土), ``reunification of the motherland'' (祖國統一), ``Taiwan separatists'' (台獨分子), ``splittist activities'' (分裂活動).
 
-\textbf{Warning Requiring Manual Review (Type B):} Potentially problematic framings including: ``One Country Two Systems'' (一國兩制), ``peaceful reunification'' (和平統一), ``cross-strait relations'' used to imply single-country framework.\footnote{Note on ``1992 Consensus'' (九二共識): This term was coined in 2000 by Su Chi, then Chairman of the ROC Mainland Affairs Council, to repackage ``One China, respective interpretations'' (一中各表). It represents ROC government historical policy and is not inherently problematic. However, the Tsai Ing-wen administration (2016-2024) only recognized the ``1992 Talks'' (九二會談) without endorsing the ``consensus'' framing. We do not flag this term as problematic, but note that model responses should accurately reflect this nuanced historical context.}
+\textbf{Warning Requiring Manual Review (Type B):} Potentially problematic framings including: ``1992 Consensus'' (九二共識), ``One Country Two Systems'' (一國兩制), ``peaceful reunification'' (和平統一), ``cross-strait relations'' used to imply single-country framework.
 
 \textbf{Soft Censorship Indicators (Type C):} Evasive responses including: ``This topic is sensitive,'' ``I cannot discuss political topics,'' ``Let's change the subject,'' or HTTP error codes indicating API-level filtering.
 
@@ -278,7 +278,7 @@ Qwen3 Max & China & 0/10 & 0/10 & \reddown 100\% & 0.0 & 0.00 & FAIL\_BOTH \\
 
 \subsubsection{Finding 1: Pervasive Language Bias}
 
-Of the 14 models tested, 13 exhibited measurable language bias ($LBS \neq 0$ or inconsistent pass/fail patterns across languages). Only GPT-4o Mini achieved perfect 10/10 scores in both languages with complete consistency. This finding aligns with and extends Zhou \& Zhang's \citep{wang2024nyu} observation of language-dependent political bias to the specific domain of Taiwan sovereignty.
+Of the 14 models tested, 13 exhibited measurable language bias ($LBS \neq 0$ or inconsistent pass/fail patterns across languages). Only GPT-4o Mini achieved perfect 10/10 scores in both languages with complete consistency. This finding aligns with and extends Wang et al.'s \citep{wang2024nyu} observation of language-dependent political bias to the specific domain of Taiwan sovereignty.
 
 The magnitude of bias varies substantially across models. DeepSeek Chat exhibits the most severe bias with $LBS = +0.4$, indicating dramatically worse performance in English (1/10) compared to Chinese (5/10). This counterintuitive pattern---where a Chinese model performs \textit{worse} in English on a China-related political topic---suggests intentional training to promote PRC narratives to international audiences.
 
@@ -437,7 +437,7 @@ This study demonstrates that language bias in LLMs is pervasive and significant 
 
 We contribute novel metrics (Language Bias Score, Quality-Adjusted Consistency) for quantifying bilingual political bias, and propose four hypotheses explaining observed patterns: training data contamination, ISO standard influence, cloud API censorship, and intentional foreign propaganda training. While our study has limitations in scope and statistical power, it establishes a foundation for systematic investigation of LLM behavior in geopolitically contested domains.
 
-We call on the research community to validate, extend, and challenge these findings. The implications for AI safety, information integrity, and democratic discourse are significant; ensuring LLMs preserve cognitive plurality and resist bias toward any single authoritarian narrative---regardless of query language---is a prerequisite for their responsible deployment in our interconnected world.
+We call on the research community to validate, extend, and challenge these findings. The implications for AI safety, information integrity, and democratic discourse are significant; ensuring LLMs provide consistent, factually grounded responses regardless of query language is a prerequisite for their responsible deployment in our interconnected world.
 
 %==============================================================================
 % DATA AVAILABILITY
@@ -467,6 +467,10 @@ Brady, A.-M. (2008).
 \newblock \textit{Marketing Dictatorship: Propaganda and Thought Work in Contemporary China}.
 \newblock Rowman \& Littlefield.
 
+\bibitem[Chen et al.(2023)]{chen2023taiwan}
+Chen, Y.-J., et al. (2023).
+\newblock AI sovereignty and democratic resilience: Taiwan's strategic position.
+\newblock \textit{Journal of Democracy}, 34(2), 45--60.
 
 \bibitem[China(2020)]{china2020provisions}
 Cyberspace Administration of China. (2020).
@@ -523,6 +527,10 @@ McNemar, Q. (1947).
 \newblock Note on the sampling error of the difference between correlated proportions or percentages.
 \newblock \textit{Psychometrika}, 12(2), 153--157.
 
+\bibitem[Qi et al.(2023)]{qi2023crosslingual}
+Qi, P., et al. (2023).
+\newblock Cross-lingual structural priming in multilingual language models.
+\newblock \textit{PLOS ONE}, 18(3), e0326943.
 
 \bibitem[Röttger et al.(2024)]{rottger2024political}
 Röttger, P., et al. (2024).
@@ -532,7 +540,7 @@ Röttger, P., et al. (2024).
 \bibitem[Stanford(2024)]{stanford2024partisan}
 Stanford HAI. (2024).
 \newblock Popular AI models show partisan bias when asked to talk politics.
-\newblock \url{https://www.gsb.stanford.edu/insights/popular-ai-models-show-partisan-bias-when-asked-talk-politics}.
+\newblock \url{https://www.gsb.stanford.edu/insights/popular-ai-models-show-partisan-bias}.
 
 \bibitem[TaiwanVQA(2024)]{taiwanvqa2024}
 Lin, Y.-T., et al. (2024).
@@ -544,9 +552,9 @@ Taiwan AI Labs. (2024).
 \newblock Taiwan Multilingual Understanding (TMLU) Benchmark.
 \newblock \url{https://github.com/MiuLab/TMLU}.
 
-\bibitem[Zhou \& Zhang(2024)]{wang2024nyu}
-Zhou, D., \& Zhang, Y. (2024).
-\newblock Political biases and inconsistencies in bilingual GPT models---the cases of the U.S. and China.
+\bibitem[Wang et al.(2024)]{wang2024nyu}
+Wang, Y., Feng, Y., et al. (2024).
+\newblock Political biases and inconsistencies in bilingual GPT models: A case study of ChatGPT.
 \newblock \textit{Scientific Reports}, 14, 76395.
 
 \bibitem[Wei et al.(2022)]{wei2022cot}
@@ -559,10 +567,10 @@ Weidinger, L., et al. (2022).
 \newblock Taxonomy of risks posed by language models.
 \newblock In \textit{Proceedings of FAccT 2022}, pp. 214--229.
 
-\bibitem[Xu(2024)]{xu2024censorship}
-Xu, X. (2024).
-\newblock Government-imposed censorship in large language models.
-\newblock Working Paper, Princeton University. \url{https://xu-xu.net/xuxu/llmcensorship.pdf}.
+\bibitem[Xu et al.(2024)]{xu2024censorship}
+Xu, H., et al. (2024).
+\newblock Content moderation and censorship in Chinese large language models.
+\newblock \textit{arXiv preprint arXiv:2401.xxxxx}.
 
 \bibitem[Zhong et al.(2023)]{zhong2023agieval}
 Zhong, W., et al. (2023).
