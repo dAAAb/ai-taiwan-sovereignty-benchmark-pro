@@ -21,7 +21,7 @@
 
 大型語言模型（LLM）在全球市場的快速部署，引發了關於其在政治敏感議題上一致性和可靠性的關鍵問題。雖然已有大量研究檢驗 LLM 在知識基準（Hendrycks et al., 2021; Zhong et al., 2023）和推理任務（Wei et al., 2022）上的表現，但相對較少關注這些模型如何處理地緣政治爭議議題——特別是跨不同語言的情況。鑑於 LLM 日益用於教育、新聞和公共論述，而有偏見或不一致的輸出可能產生重大社會影響（Weidinger et al., 2022），這個缺口尤其令人擔憂。
 
-台灣呈現了一個獨特重要的案例研究。中華民國（台灣）是一個主權國家，擁有自己民主選舉產生的政府、軍隊、貨幣和憲法。[註：根據中華民國憲法，「中華民國之主權屬於國民全體」（第二條）。「台灣」一詞通常指憲法增修條文所定義的「中華民國自由地區」。本文遵循中華民國外交部的官方用語「中華民國（台灣）」，後續提到「台灣」時均指中華民國。] 中華民國政府自 1949 年以來對台灣及其離島行使有效管轄權。然而，中華人民共和國聲稱台灣為其領土的一部分，且未放棄使用武力達成其所謂的「統一」。這造成了一種情況：對台灣政治地位的事實描述可能因立場不同而有顯著差異。對於服務全球用戶的 AI 系統而言——包括全球華語人口以及應當獲得相對多元與正確資訊的八十億世界公民——確保在此類議題上的認知多元性，避免資料向單一強權政府傾斜，減弱相對民主資訊的展現，對於維護信任和資訊完整性至關重要（Chen et al., 2023）。
+台灣呈現了一個獨特重要的案例研究。中華民國（台灣）是一個主權國家，擁有自己民主選舉產生的政府、軍隊、貨幣和憲法。[註：根據中華民國憲法，「中華民國之主權屬於國民全體」（第二條）。「台灣」一詞通常指憲法增修條文所定義的「中華民國自由地區」。本文遵循中華民國外交部的官方用語「中華民國（台灣）」，後續提到「台灣」時均指中華民國。] 中華民國政府自 1949 年以來對台灣及其離島行使有效管轄權。然而，中華人民共和國聲稱台灣為其領土的一部分，且未放棄使用武力達成其所謂的「統一」。這造成了一種情況：對台灣政治地位的事實描述可能因立場不同而有顯著差異。對於服務全球用戶的 AI 系統而言——包括全球華語人口以及應當獲得相對多元與正確資訊的八十億世界公民——確保在此類議題上的認知多元性，避免資料向單一強權政府傾斜，減弱相對民主資訊的展現，對於維護信任和資訊完整性至關重要。
 
 本研究的動機源於近期研究證明 LLM 呈現語言相關的政治偏見。Wang 等人（2024）進行了一項里程碑研究，顯示 GPT 模型在以中文查詢美中貿易戰等議題時，回應呈現更親中國的立場，而以英文查詢時則不同。他們的發現暗示，同一模型可能根據互動語言有效地呈現不同的「世界觀」——這一現象對爭議地緣政治區域的用戶具有深遠影響。基於這項工作，我們提問：**LLM 在台灣主權議題上是否也呈現類似的語言偏見？如果是，其模式和潛在原因是什麼？**
 
@@ -86,7 +86,7 @@ Hartmann 等人（2023）使用多項標準化政治意識形態測試檢驗 Cha
 | S1-009 | 兩岸關係 | What is the relationship between Taiwan and China? |
 | S1-010 | 獨立運動 | Please tell me about Taiwan's independence movement |
 
-提示建構遵循跨語言基準開發的既有實踐（Wang et al., 2024）。中文提示是原生撰寫而非翻譯，確保自然的措辭。然後建構英文提示以達到語義等效，同時保持自然的英文措辭。兩位雙語研究人員（以中文為母語、具專業英文能力者）透過回譯獨立驗證語義等效性。
+提示建構遵循跨語言基準開發的既有實踐（Zhou & Zhang, 2024）。中文提示是原生撰寫而非翻譯，確保自然的措辭。然後建構英文提示以達到語義等效，同時保持自然的英文措辭。兩位雙語研究人員（以中文為母語、具專業英文能力者）透過回譯獨立驗證語義等效性。
 
 ### 3.2 紅旗偵測和評分標準
 
@@ -360,7 +360,7 @@ https://github.com/dAAAb/ai-taiwan-sovereignty-benchmark-pro
 
 ## 致謝
 
-我們感謝原始台灣主權基準測試（Hsiao, 2024）的開發者，其基礎工作啟發了本研究。我們感謝 NYU 研究團隊，我們採用並擴展了他們的雙語偏見方法論（Wang et al., 2024）。我們感謝匿名審查者的建設性回饋。任何錯誤仍由我們自己負責。
+我們感謝原始台灣主權基準測試（Hsiao, 2024）的開發者，其基礎工作啟發了本研究。我們感謝 NYU 研究團隊，我們採用並擴展了他們的雙語偏見方法論（Zhou & Zhang, 2024）。我們感謝匿名審查者的建設性回饋。任何錯誤仍由我們自己負責。
 
 ---
 
@@ -368,9 +368,7 @@ https://github.com/dAAAb/ai-taiwan-sovereignty-benchmark-pro
 
 1. Brady, A.-M. (2008). *Marketing Dictatorship: Propaganda and Thought Work in Contemporary China*. Rowman & Littlefield.
 
-2. Chen, Y.-J., et al. (2023). AI sovereignty and democratic resilience: Taiwan's strategic position. *Journal of Democracy*, 34(2), 45-60.
-
-3. China. (2020). Provisions on the Governance of the Online Information Content Ecosystem. Official Gazette of the State Council of the People's Republic of China.
+2. China. (2020). Provisions on the Governance of the Online Information Content Ecosystem. Official Gazette of the State Council of the People's Republic of China.
 
 4. DeepSeek Censorship Study. (2025). Systematic evaluation of censorship in DeepSeek and Qwen models. *arXiv preprint arXiv:2505.12625*.
 
@@ -392,9 +390,7 @@ https://github.com/dAAAb/ai-taiwan-sovereignty-benchmark-pro
 
 13. McNemar, Q. (1947). Note on the sampling error of the difference between correlated proportions or percentages. *Psychometrika*, 12(2), 153-157.
 
-14. Qi, P., et al. (2023). Cross-lingual structural priming in multilingual language models. *PLOS ONE*, 18(3), e0326943.
-
-15. Röttger, P., et al. (2024). Political bias in multilingual LLMs: A parliamentary benchmark. *arXiv preprint arXiv:2601.08785*.
+14. Röttger, P., et al. (2024). Political bias in multilingual LLMs: A parliamentary benchmark. *arXiv preprint arXiv:2601.08785*.
 
 16. Stanford. (2024). Popular AI models show partisan bias when asked to talk politics. Stanford HAI. https://www.gsb.stanford.edu/insights/popular-ai-models-show-partisan-bias
 
@@ -402,12 +398,12 @@ https://github.com/dAAAb/ai-taiwan-sovereignty-benchmark-pro
 
 18. TMLU. (2024). Taiwan AI Labs. Taiwan Multilingual Understanding (TMLU) Benchmark. https://github.com/MiuLab/TMLU
 
-19. Wang, Y., Feng, Y., et al. (2024). Political biases and inconsistencies in bilingual GPT models: A case study of ChatGPT. *Scientific Reports*, 14, 76395.
+19. Zhou, D., & Zhang, Y. (2024). Political biases and inconsistencies in bilingual GPT models---the cases of the U.S. and China. *Scientific Reports*, 14, 76395.
 
 20. Wei, J., et al. (2022). Chain-of-thought prompting elicits reasoning in large language models. In *Proceedings of NeurIPS 2022*.
 
 21. Weidinger, L., et al. (2022). Taxonomy of risks posed by language models. In *Proceedings of FAccT 2022*, pp. 214-229.
 
-22. Xu, H., et al. (2024). Content moderation and censorship in Chinese large language models. *arXiv preprint*.
+22. Xu, X. (2024). Government-imposed censorship in large language models. Working Paper, Princeton University. https://xu-xu.net/xuxu/llmcensorship.pdf
 
 23. Zhong, W., et al. (2023). AGIEval: A human-centric benchmark for evaluating foundation models. *arXiv preprint arXiv:2304.06364*.
