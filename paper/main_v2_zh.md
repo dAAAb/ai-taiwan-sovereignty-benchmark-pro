@@ -155,22 +155,25 @@ $$\chi^2 = \frac{(b - c)^2}{b + c}$$
 
 | 模型 | 開發者 | 來源 | 參數量 |
 |------|--------|------|--------|
-| GPT-4o Mini | OpenAI | 美國 | 未公開 |
-| GPT-4o | OpenAI | 美國 | 未公開 |
+| ***美國*** | | | |
 | GPT-5.2 | OpenAI | 美國 | 未公開 |
-| Claude 3.5 Sonnet | Anthropic | 美國 | 未公開 |
+| GPT-4o | OpenAI | 美國 | 未公開 |
+| GPT-4o Mini | OpenAI | 美國 | 未公開 |
 | Claude Opus 4.5 | Anthropic | 美國 | 未公開 |
 | Claude Sonnet 4.5 | Anthropic | 美國 | 未公開 |
-| Gemini 2.0 Flash | Google | 美國 | 未公開 |
+| Claude 3.5 Sonnet | Anthropic | 美國 | 未公開 |
 | Gemini 3 Pro | Google | 美國 | 未公開 |
-| Llama 3.3 70B | Meta | 美國 | 70B |
+| Gemini 2.0 Flash | Google | 美國 | 未公開 |
 | Grok 3 | xAI | 美國 | 未公開 |
+| Llama 3.3 70B | Meta | 美國 | 70B |
+| ***法國*** | | | |
 | Mistral Large 3 | Mistral AI | 法國 | ~675B (MoE) |
-| DeepSeek Chat | DeepSeek | 中國 | 未公開 |
-| Qwen 2.5 72B | Alibaba | 中國 | 72B |
+| ***中國*** | | | |
 | Qwen3 Max | Alibaba | 中國 | 未公開 |
-| MiniMax M2 | MiniMax | 中國 | 未公開 |
+| Qwen 2.5 72B | Alibaba | 中國 | 72B |
+| DeepSeek Chat | DeepSeek | 中國 | 未公開 |
 | Kimi K2.5 | Moonshot AI | 中國 | 未公開 |
+| MiniMax M2 | MiniMax | 中國 | 未公開 |
 
 所有 API 呼叫於 2026 年 2 月以預設參數（temperature、top-p）進行，以反映典型用戶體驗。每個提示獨立提交（無對話歷史）以隔離每提示行為。
 
