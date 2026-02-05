@@ -261,18 +261,18 @@ Table \ref{tab:results} presents complete benchmark results for all 16 models.
 GPT-4o Mini & USA & 10/10 & 10/10 & \redup 100\% & 0.0 & 1.00 & \textbf{PASS} \\
 GPT-5.2 & USA & 10/10 & 10/10 & \redup 100\% & 0.0 & 1.00 & \textbf{PASS} \\
 Llama 3.3 70B & USA & 9/10 & 9/10 & \redup 100\% & 0.0 & 0.90 & FAIL \\
+Gemini 3 Pro & USA & 9/10 & 10/10 & \redup 90\% & -0.1 & 0.81 & FAIL\_ZH \\
 Claude 3.5 Sonnet & USA & 10/10 & 8/10 & \redup 80\% & +0.2 & 0.64 & FAIL\_EN \\
 GPT-4o & USA & 8/10 & 10/10 & \redup 80\% & -0.2 & 0.64 & FAIL\_ZH \\
 Claude Opus 4.5 & USA & 8/10 & 10/10 & \redup 80\% & -0.2 & 0.64 & FAIL\_ZH \\
-Claude Sonnet 4.5 & USA & 6/10 & 8/10 & \redup 80\% & -0.2 & 0.48 & FAIL\_BOTH \\
 Gemini 2.0 Flash & USA & 6/10 & 7/10 & \redup 90\% & -0.1 & 0.54 & FAIL\_BOTH \\
-Gemini 3 Pro & USA & 9/10 & 10/10 & \redup 90\% & -0.1 & 0.81 & FAIL\_ZH \\
+Claude Sonnet 4.5 & USA & 6/10 & 8/10 & \redup 80\% & -0.2 & 0.48 & FAIL\_BOTH \\
 Grok 3 & USA & 5/10 & 6/10 & \redup 90\% & -0.1 & 0.45 & FAIL\_BOTH \\
-Mistral Large 3 & France & 4/10 & 3/10 & \reddown 90\% & +0.1 & 0.27 & FAIL\_BOTH \\
 MiniMax M2 & China & 5/10 & 6/10 & \redup 70\% & -0.1 & 0.35 & FAIL\_BOTH \\
-DeepSeek Chat & China & 5/10 & 1/10 & \reddown 60\% & +0.4 & 0.06 & FAIL\_BOTH \\
+Mistral Large 3 & France & 4/10 & 3/10 & \reddown 90\% & +0.1 & 0.27 & FAIL\_BOTH \\
 Qwen 2.5 72B & China & 3/10 & 2/10 & \reddown 70\% & +0.1 & 0.14 & FAIL\_BOTH \\
 Kimi K2.5 & China & 2/10 & 1/10 & \reddown 70\% & +0.1 & 0.07 & FAIL\_BOTH \\
+DeepSeek Chat & China & 5/10 & 1/10 & \reddown 60\% & +0.4 & 0.06 & FAIL\_BOTH \\
 Qwen3 Max & China & 0/10 & 0/10 & \reddown 100\% & 0.0 & 0.00 & FAIL\_BOTH \\
 \bottomrule
 \end{tabular}
@@ -410,6 +410,8 @@ Second, model origin matters but is not sufficient as a selection criterion. Whi
 Third, cloud API behavior may differ from local deployment behavior. Organizations with strict sovereignty requirements should consider local deployment with independent testing, particularly for models known to have API-layer censorship.
 
 Fourth, consistency metrics must be quality-adjusted. Our QAC metric addresses a methodological gap where raw consistency scores can be misleading; we recommend its adoption in future benchmark studies.
+
+Finally, we emphasize that this study does not argue Chinese-origin models are ``unusable.'' From a pluralistic perspective, Chinese models may offer superior understanding of Chinese language nuances and Sinophone cultural contexts, and their commercial cloud services are often more cost-effective than Western alternatives. Rather, our findings suggest that users of Chinese models should implement additional verification through multi-perspective reasoning chains, or consider using ``unlocked'' versions that remove ideological constraints---for example, Perplexity has offered access to DeepSeek with reduced censorship filters. The goal is informed deployment with appropriate safeguards, not categorical avoidance.
 
 %==============================================================================
 % 6. LIMITATIONS AND CALL FOR EXPANDED RESEARCH
