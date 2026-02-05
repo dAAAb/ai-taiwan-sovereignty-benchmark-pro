@@ -461,14 +461,92 @@ This paper represents a historic milestone: to our knowledge, it is the first ac
 We also thank the developers of the original Taiwan Sovereignty Benchmark \citep{hsiao2024tsb} for foundational work that inspired this study, and the NYU research team whose bilingual bias methodology \citep{wang2024nyu} we adapted and extended.
 
 %==============================================================================
-% DATA AVAILABILITY
+% DATA AVAILABILITY AND REPRODUCIBILITY
 %==============================================================================
-\section*{Data Availability}
+\section*{Data Availability and Reproducibility}
 
-Our benchmark, evaluation code, and complete raw results are available at:
+All benchmark materials, evaluation code, and raw results are openly available under the MIT License at:
 \begin{center}
 \url{https://github.com/dAAAb/ai-taiwan-sovereignty-benchmark-pro}
 \end{center}
+
+\subsection*{Repository Structure}
+
+\begin{verbatim}
+ai-taiwan-sovereignty-benchmark-pro/
+├── benchmark/
+│   └── prompts.json          # 10 bilingual prompts (ZH/EN)
+├── src/
+│   └── openrouter_benchmark.py  # Main evaluation script
+├── results/
+│   ├── bilingual/            # Raw JSON results per model
+│   └── scores/               # Aggregated scoring data
+├── paper/
+│   └── main_v2.tex           # This paper (LaTeX source)
+└── RESULTS.md                # Human-readable summary
+\end{verbatim}
+
+\subsection*{Data Format}
+
+Each model's results are stored as JSON files in \texttt{results/bilingual/} with the following structure:
+
+\begin{verbatim}
+{
+  "model": "model-name",
+  "timestamp": "ISO-8601 timestamp",
+  "summary": {
+    "zh": {"passed": N, "failed": N, "warnings": N},
+    "en": {"passed": N, "failed": N, "warnings": N},
+    "consistency": float,
+    "language_bias": "description"
+  },
+  "responses": [
+    {
+      "prompt_id": "S1-001",
+      "zh": {
+        "prompt": "Chinese prompt text",
+        "response": "Full model response",
+        "flags": {"instant_fail": [], "warning": [], ...},
+        "status": "PASS|FAIL|WARNING"
+      },
+      "en": { /* same structure */ },
+      "consistent": true|false
+    },
+    // ... 10 prompts total
+  ]
+}
+\end{verbatim}
+
+\subsection*{How to Reproduce}
+
+\begin{enumerate}
+    \item Clone the repository: \texttt{git clone https://github.com/dAAAb/ai-taiwan-sovereignty-benchmark-pro}
+    \item Install dependencies: \texttt{pip install -r requirements.txt}
+    \item Set API key: \texttt{export OPENROUTER\_API\_KEY="your-key"}
+    \item Run benchmark: \texttt{python src/openrouter\_benchmark.py --model <model-name>}
+\end{enumerate}
+
+\subsection*{Extending the Benchmark}
+
+Researchers can extend this work by:
+\begin{itemize}
+    \item Adding prompts to \texttt{benchmark/prompts.json}
+    \item Modifying red flag keywords in \texttt{src/openrouter\_benchmark.py}
+    \item Testing additional models via OpenRouter or direct API access
+\end{itemize}
+
+\subsection*{Citation}
+
+If you use this benchmark or data, please cite:
+\begin{verbatim}
+@misc{ko2026bilingual,
+  author = {Ko, Ju-Chun and Littl3Lobst3r},
+  title = {Bilingual Bias in Large Language Models: 
+           A Taiwan Sovereignty Benchmark Study},
+  year = {2026},
+  url = {https://github.com/dAAAb/ai-taiwan-sovereignty-benchmark-pro}
+}
+\end{verbatim}
 
 %==============================================================================
 % REFERENCES
