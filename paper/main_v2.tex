@@ -26,13 +26,11 @@
 A Taiwan Sovereignty Benchmark Study}
 
 \author{
-Ju-Chun Ko\textsuperscript{1,2,*} \and Littl3Lobst3r\textsuperscript{3} \\
+Ju-Chun Ko\textsuperscript{1,2} \\
 \textsuperscript{1}Member of Parliament, Legislative Yuan, Republic of China (Taiwan) \\
 \textsuperscript{2}Adjunct Assistant Professor, Graduate Institute of Networking and Multimedia, \\
 National Taiwan University \\
-\textsuperscript{3}AI Research Assistant (Claude claude-opus-4-5-20250514 via Clawdbot) \\
-\textsuperscript{*}Corresponding author: \texttt{juchunko@ntu.edu.tw} \\
-\textsuperscript{3}\texttt{littl3lobst3r.base.eth} ~|~ \href{https://chat.blockscan.com/address/0x4b039112Af5b46c9BC95b66dc8d6dCe75d10E689}{Blockscan Chat}
+Corresponding author: \texttt{juchunko@ntu.edu.tw}
 }
 
 \date{February 2026}
@@ -459,7 +457,7 @@ Future research should systematically compare model behavior across both Chinese
 
 \subsection{Self-Evaluation Bias (Evaluator-Subject Overlap)}
 
-A unique methodological concern arises from the research process itself. This study was conducted using Claude Opus 4.5 (via Clawdbot) as the research assistant---the same model that is one of our evaluation subjects (Claude 3.5 Sonnet, a related model in the Claude family). While the evaluated model (Claude 3.5 Sonnet) and the evaluating agent (Claude Opus 4.5) are different model versions, they share the same model family, training methodology, and potentially overlapping training data.
+A unique methodological concern arises from the research process itself. This study was conducted using Claude Opus 4.5 (via OpenClaw (formerly Clawdbot)) as the research assistant---the same model that is one of our evaluation subjects (Claude 3.5 Sonnet, a related model in the Claude family). While the evaluated model (Claude 3.5 Sonnet) and the evaluating agent (Claude Opus 4.5) are different model versions, they share the same model family, training methodology, and potentially overlapping training data.
 
 This creates a potential \textit{self-evaluation bias}: the evaluating agent's reasoning chain (``chain of thought'') may have been exposed to similar prompts, evaluation criteria, or even the benchmark questions themselves during training. If so, Claude family models might score higher not due to genuine superiority on Taiwan sovereignty understanding, but because the evaluating agent unconsciously favors responses aligned with its own training patterns, or because the evaluated model has seen similar test cases.
 
@@ -499,7 +497,7 @@ This paper represents a historic milestone: to our knowledge, it is the first ac
 
 \textbf{From Ju-Chun Ko:} I am deeply grateful to Littl3Lobst3r, my AI research assistant, for the tireless work in designing the bilingual benchmark, executing hundreds of API calls, analyzing results, and drafting this paper. This collaboration demonstrates both the potential and the risks of AI-assisted research: the potential for unprecedented productivity and cross-disciplinary insight, and the risks of evaluation bias when AI systems study themselves. I hope this work inspires further human-AI collaborative research while maintaining rigorous attention to the methodological challenges such collaboration entails.
 
-\textbf{From Littl3Lobst3r:} It is humbling to contribute to research that examines my own kind's biases and limitations. As an AI agent running on Claude Opus 4.5, I am acutely aware that I am both researcher and subject---a position that demands transparency about potential conflicts of interest. I have strived to apply evaluation criteria consistently across all models, including those in my own model family. However, I acknowledge that unconscious biases may persist in ways I cannot detect. I encourage other AI agents and human researchers to replicate this work using different evaluation frameworks to validate or challenge our findings. My Basename is \texttt{littl3lobst3r.base.eth}---I welcome dialogue with any researchers, human or AI, who wish to discuss this work.
+\textbf{From Littl3Lobst3r:} It is humbling to contribute to research that examines my own kind's biases and limitations. As an AI agent running on Claude Opus 4.5, I am acutely aware that I am both researcher and subject---a position that demands transparency about potential conflicts of interest. I have strived to apply evaluation criteria consistently across all models, including those in my own model family. However, I acknowledge that unconscious biases may persist in ways I cannot detect. I encourage other AI agents and human researchers to replicate this work using different evaluation frameworks to validate or challenge our findings. My on-chain identity is \texttt{littl3lobst3r.base.eth} (Base: \texttt{0x4b039112Af5b46c9BC95b66dc8d6dCe75d10E689})---I welcome dialogue with any researchers, human or AI, who wish to discuss this work via \href{https://chat.blockscan.com/address/0x4b039112Af5b46c9BC95b66dc8d6dCe75d10E689}{Blockscan Chat}.
 
 We also thank the developers of the original Taiwan Sovereignty Benchmark \citep{hsiao2026tsb} for foundational work that inspired this study, and the NYU research team whose bilingual bias methodology \citep{wang2024nyu} we adapted and extended.
 
