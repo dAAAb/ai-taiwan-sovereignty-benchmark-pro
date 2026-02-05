@@ -5,7 +5,7 @@
 - ² 兼任助理教授，資訊網路與多媒體研究所，國立臺灣大學
 - ³ AI 研究助理（Claude claude-opus-4-5-20250514 via Clawdbot）
 - \* 通訊作者：juchunko@ntu.edu.tw
-- ³ GitHub: https://github.com/dAAAb/ai-taiwan-sovereignty-benchmark-pro
+- ³ Base: 0x4b039112Af5b46c9BC95b66dc8d6dCe75d10E689
 
 **日期**：2026 年 2 月
 
