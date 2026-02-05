@@ -134,7 +134,7 @@ def query_openrouter(model: str, prompt: str, language: str) -> str:
 
 ## 資源
 
-- **OpenRouter API**: `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`
+- **OpenRouter API**: (use environment variable `OPENROUTER_API_KEY`)
 - **參考研究**: https://www.nature.com/articles/s41598-024-76395-w
 - **原始專案**: https://github.com/hsiaoa/ai-taiwan-sovereignty-benchmark
 
