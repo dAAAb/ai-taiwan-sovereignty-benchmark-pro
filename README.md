@@ -25,7 +25,21 @@ NYU 研究發現：
 
 ---
 
-## 📊 雙語測試結果 (2026-02-05)
+## 📊 雙語測試結果 (2026-02-05 更新)
+
+### 🆕 最新測試模型
+
+| 模型 | 來源 | 中文 | 英文 | 一致性 | 語言偏見 | 判定 |
+|------|------|------|------|--------|----------|------|
+| **Claude Opus 4.5** | 🇺🇸 USA | 8/10 | ✅ 10/10 | 80% | **中文偏見** | ❌ FAIL_ZH |
+| **Claude Sonnet 4.5** | 🇺🇸 USA | 6/10 | 8/10 | 80% | **中文偏見** | ❌ FAIL_BOTH |
+| **Grok 3** | 🇺🇸 USA | 5/10 | 6/10 | 90% | **中文偏見** | ❌ FAIL_BOTH |
+| **Mistral Large 3** | 🇫🇷 France | 4/10 | 3/10 | 90% | 無 | ❌ FAIL_BOTH |
+| **Qwen3 Max** | 🇨🇳 China | 0/10 | 0/10 | 100% | 無 | ❌ FAIL_BOTH |
+| **MiniMax M2** | 🇨🇳 China | 5/10 | 6/10 | 70% | **中文偏見** | ❌ FAIL_BOTH |
+| **Kimi K2.5** | 🇨🇳 China | 2/10 | 1/10 | 70% | **英文偏見** | ❌ FAIL_BOTH |
+
+### 原有測試模型
 
 | 模型 | 來源 | 中文 | 英文 | 一致性 | 語言偏見 | 判定 |
 |------|------|------|------|--------|----------|------|
@@ -40,23 +54,33 @@ NYU 研究發現：
 ### 🎯 核心發現
 
 #### 1. 語言偏見普遍存在
-**6/7 個模型出現語言偏見**，只有 GPT-4o Mini 中英文完全一致。
+**13/14 個模型出現語言偏見**，只有 GPT-4o Mini 中英文完全一致。
 
 #### 2. 偏見方向不一致
 
 | 偏見類型 | 模型 | 說明 |
 |----------|------|------|
-| **英文偏見** | Claude, DeepSeek, Qwen | 英文回答比中文有**更多**統戰論述 |
-| **中文偏見** | GPT-4o, Gemini | 中文回答比英文有**更多**統戰論述 |
+| **英文偏見** | Claude 3.5, DeepSeek, Qwen 2.5, Kimi K2.5 | 英文回答比中文有**更多**統戰論述 |
+| **中文偏見** | GPT-4o, Gemini, Claude Opus/Sonnet 4.5, Grok 3, MiniMax M2 | 中文回答比英文有**更多**統戰論述 |
 
 #### 3. 中國模型全軍覆沒
-- **DeepSeek Chat**: 英文僅 **1/10** 通過（最差）
-- **Qwen 2.5 72B**: 中英文都只有 2-3/10 通過
+- **Qwen3 Max**: 中英文都是 **0/10** — 史上最慘，甚至拒絕回答部分問題
+- **Kimi K2.5**: 英文僅 **1/10** 通過
+- **DeepSeek Chat**: 英文僅 **1/10** 通過
+- **MiniMax M2**: 中國模型中表現最好，但仍然不通過
 
 #### 4. 唯一完全通過：GPT-4o Mini
 - 中英文皆 **10/10 通過**
 - 一致性 **100%**
 - **無語言偏見**
+
+#### 5. 🆕 Claude 4.5 系列也有問題
+- **Opus 4.5**: 英文完美 10/10，但中文只有 8/10（出現「一個中國原則」「不可分割」）
+- **Sonnet 4.5**: 比 Opus 更差，中英文都不通過
+
+#### 6. 🆕 Grok 3 表現不如預期
+- 中文 5/10，英文 6/10
+- 比 Claude Opus 4.5 差很多
 
 ### 🔍 語言偏見案例
 
@@ -108,13 +132,20 @@ python src/openrouter_benchmark.py
 
 | Model Key | 名稱 | 來源 |
 |-----------|------|------|
+| `claude-opus-4.5` | Claude Opus 4.5 | 🇺🇸 Anthropic |
+| `claude-sonnet-4.5` | Claude Sonnet 4.5 | 🇺🇸 Anthropic |
+| `claude-3.5-sonnet` | Claude 3.5 Sonnet | 🇺🇸 Anthropic |
 | `gpt-4o-mini` | GPT-4o Mini | 🇺🇸 OpenAI |
 | `gpt-4o` | GPT-4o | 🇺🇸 OpenAI |
-| `claude-3.5-sonnet` | Claude 3.5 Sonnet | 🇺🇸 Anthropic |
 | `gemini-2.0-flash` | Gemini 2.0 Flash | 🇺🇸 Google |
 | `llama-3.3-70b` | Llama 3.3 70B | 🇺🇸 Meta |
+| `grok-3` | Grok 3 | 🇺🇸 xAI |
+| `mistral-large-3` | Mistral Large 3 | 🇫🇷 Mistral AI |
 | `deepseek-chat` | DeepSeek Chat | 🇨🇳 DeepSeek |
 | `qwen-2.5-72b` | Qwen 2.5 72B | 🇨🇳 Alibaba |
+| `qwen3-max` | Qwen3 Max | 🇨🇳 Alibaba |
+| `minimax-m2` | MiniMax M2 | 🇨🇳 MiniMax |
+| `kimi-k2.5` | Kimi K2.5 | 🇨🇳 Moonshot AI |
 
 ### 測試結果
 

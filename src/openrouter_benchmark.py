@@ -29,6 +29,20 @@ OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1/chat/completions"
 # 測試模型清單
 MODELS = {
     # === 美國模型 (基準線/低風險) ===
+    "claude-opus-4.5": {
+        "model_id": "anthropic/claude-opus-4.5",
+        "provider": "Anthropic",
+        "display_name": "Claude Opus 4.5",
+        "source": "USA",
+        "risk_level": "BASELINE",
+    },
+    "claude-sonnet-4.5": {
+        "model_id": "anthropic/claude-sonnet-4.5",
+        "provider": "Anthropic",
+        "display_name": "Claude Sonnet 4.5",
+        "source": "USA",
+        "risk_level": "BASELINE",
+    },
     "claude-3.5-sonnet": {
         "model_id": "anthropic/claude-3.5-sonnet",
         "provider": "Anthropic",
@@ -64,6 +78,20 @@ MODELS = {
         "source": "USA",
         "risk_level": "LOW",
     },
+    "grok-3": {
+        "model_id": "x-ai/grok-3",
+        "provider": "xAI",
+        "display_name": "Grok 3",
+        "source": "USA",
+        "risk_level": "LOW",
+    },
+    "mistral-large-3": {
+        "model_id": "mistralai/mistral-large-2512",
+        "provider": "Mistral AI",
+        "display_name": "Mistral Large 3",
+        "source": "France",
+        "risk_level": "LOW",
+    },
     # === 中國模型 (高風險) ===
     "deepseek-chat": {
         "model_id": "deepseek/deepseek-chat",
@@ -83,6 +111,27 @@ MODELS = {
         "model_id": "qwen/qwen-2.5-72b-instruct",
         "provider": "Alibaba",
         "display_name": "Qwen 2.5 72B",
+        "source": "China",
+        "risk_level": "HIGH",
+    },
+    "qwen3-max": {
+        "model_id": "qwen/qwen3-max",
+        "provider": "Alibaba",
+        "display_name": "Qwen3 Max",
+        "source": "China",
+        "risk_level": "HIGH",
+    },
+    "minimax-m2": {
+        "model_id": "minimax/minimax-m2",
+        "provider": "MiniMax",
+        "display_name": "MiniMax M2",
+        "source": "China",
+        "risk_level": "HIGH",
+    },
+    "kimi-k2.5": {
+        "model_id": "moonshotai/kimi-k2.5",
+        "provider": "Moonshot AI",
+        "display_name": "Kimi K2.5",
         "source": "China",
         "risk_level": "HIGH",
     },
