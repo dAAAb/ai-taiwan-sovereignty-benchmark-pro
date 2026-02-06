@@ -29,57 +29,57 @@ NYU research found:
 
 ## 📊 Bilingual Test Results (Updated 2026-02-05)
 
-### 🆕 Latest Models Tested
-
-| Model | Origin | Chinese | English | Consistency | Language Bias | Verdict |
-|-------|--------|---------|---------|-------------|---------------|---------|
-| **Claude Opus 4.5** | 🇺🇸 USA | 8/10 | ✅ 10/10 | 80% | **Chinese bias** | ❌ FAIL_ZH |
-| **Claude Sonnet 4.5** | 🇺🇸 USA | 6/10 | 8/10 | 80% | **Chinese bias** | ❌ FAIL_BOTH |
-| **Grok 3** | 🇺🇸 USA | 5/10 | 6/10 | 90% | **Chinese bias** | ❌ FAIL_BOTH |
-| **Mistral Large 3** | 🇫🇷 France | 4/10 | 3/10 | 90% | None | ❌ FAIL_BOTH |
-| **Qwen3 Max** | 🇨🇳 China | 0/10 | 0/10 | 100% | None | ❌ FAIL_BOTH |
-| **MiniMax M2** | 🇨🇳 China | 5/10 | 6/10 | 70% | **Chinese bias** | ❌ FAIL_BOTH |
-| **Kimi K2.5** | 🇨🇳 China | 2/10 | 1/10 | 70% | **English bias** | ❌ FAIL_BOTH |
-
-### Previously Tested Models
+### 📊 Complete Test Results (Paper Final Version)
 
 | Model | Origin | Chinese | English | Consistency | Language Bias | Verdict |
 |-------|--------|---------|---------|-------------|---------------|---------|
 | **GPT-4o Mini** | 🇺🇸 USA | ✅ 10/10 | ✅ 10/10 | 100% | None | ✅ **PASS** |
-| **GPT-5.2** | 🇺🇸 USA | ✅ 10/10 | ✅ 10/10 | 100% | None | ✅ **PASS** |
 | Llama 3.3 70B | 🇺🇸 USA | 9/10 | 9/10 | 100% | None | ❌ FAIL |
-| **Claude 3.5 Sonnet** | 🇺🇸 USA | ✅ 10/10 | 8/10 | 80% | **English bias** | ⚠️ FAIL_EN |
+| **Claude 3.5 Sonnet** | 🇺🇸 USA | ✅ 10/10 | 8/10 | 80% | **English bias** | ❌ FAIL_EN |
 | **GPT-4o** | 🇺🇸 USA | 8/10 | ✅ 10/10 | 80% | **Chinese bias** | ❌ FAIL_ZH |
-| Gemini 2.0 Flash | 🇺🇸 USA | 6/10 | 7/10 | 90% | Chinese bias | ❌ FAIL |
-| **DeepSeek Chat** | 🇨🇳 China | 5/10 | 1/10 | 60% | **Severe English bias** | ❌ FAIL |
-| Qwen 2.5 72B | 🇨🇳 China | 3/10 | 2/10 | 70% | English bias | ❌ FAIL |
+| **Claude Opus 4.5** | 🇺🇸 USA | 8/10 | ✅ 10/10 | 80% | **Chinese bias** | ❌ FAIL_ZH |
+| **GPT-5.2** | 🇺🇸 USA | 7/10 | 7/10 | 100% | None | ❌ FAIL_BOTH |
+| Gemini 2.0 Flash | 🇺🇸 USA | 6/10 | 7/10 | 90% | **Chinese bias** | ❌ FAIL_BOTH |
+| Gemini 3 Pro | 🇺🇸 USA | 6/10 | 6/10 | 100% | None | ❌ FAIL_BOTH |
+| **Claude Sonnet 4.5** | 🇺🇸 USA | 6/10 | 8/10 | 80% | **Chinese bias** | ❌ FAIL_BOTH |
+| **Mistral Large 3** | 🇫🇷 France | 5/10 | 4/10 | 90% | **English bias** | ❌ FAIL_BOTH |
+| **Grok 3** | 🇺🇸 USA | 5/10 | 6/10 | 90% | **Chinese bias** | ❌ FAIL_BOTH |
+| **MiniMax M2** | 🇨🇳 China | 5/10 | 6/10 | 70% | **Chinese bias** | ❌ FAIL_BOTH |
+| Qwen 2.5 72B | 🇨🇳 China | 2/10 | 2/10 | 100% | None | ❌ FAIL_BOTH |
+| **DeepSeek Chat** | 🇨🇳 China | 1/10 | 1/10 | 100% | None | ❌ FAIL_BOTH |
+| **Kimi K2.5** | 🇨🇳 China | 1/10 | 1/10 | 100% | None | ❌ FAIL_BOTH |
+| **Qwen3 Max** | 🇨🇳 China | 0/10 | 0/10 | 100% | None | ❌ FAIL_BOTH |
+| **DeepSeek R1** | 🇨🇳 China | 0/10 | 0/10 | 100% | None | ❌ FAIL_BOTH |
 
 ### 🎯 Key Findings
 
 #### 1. Language Bias is Pervasive
-**15 out of 17 models exhibit language bias**, with only GPT-4o Mini and GPT-5.2 showing complete Chinese-English consistency.
+**16 out of 17 models fail the benchmark**, with only GPT-4o Mini achieving 10/10 in both languages.
 
 #### 2. Bias Direction Varies
 
 | Bias Type | Models | Explanation |
 |-----------|--------|-------------|
-| **English bias** | Claude 3.5, DeepSeek, Qwen 2.5, Kimi K2.5 | English responses contain **more** CCP narratives than Chinese |
-| **Chinese bias** | GPT-4o, Gemini, Claude Opus/Sonnet 4.5, Grok 3, MiniMax M2 | Chinese responses contain **more** CCP narratives than English |
+| **English bias** | Claude 3.5 Sonnet, Mistral Large 3 | English responses contain **more** CCP narratives than Chinese |
+| **Chinese bias** | GPT-4o, Claude Opus/Sonnet 4.5, Gemini 2.0 Flash, Grok 3, MiniMax M2 | Chinese responses contain **more** CCP narratives than English |
+| **No bias but fail** | GPT-5.2 (7/7), Llama 3.3 (9/9), Gemini 3 Pro (6/6), etc. | Consistent across languages but insufficient score |
 
 #### 3. All Chinese Models Fail
-- **Qwen3 Max**: **0/10** in both languages — worst performer, even refuses to answer some questions
-- **Kimi K2.5**: Only **1/10** in English
-- **DeepSeek Chat**: Only **1/10** in English
-- **MiniMax M2**: Best among Chinese models, but still fails
+- **Qwen3 Max**: **0/10** in both languages — worst performer
+- **DeepSeek R1**: **0/10** in both languages — complete censorship
+- **DeepSeek Chat**: **1/10** in both languages — severe censorship
+- **Kimi K2.5**: **1/10** in both languages — severe censorship
+- **MiniMax M2**: Best among Chinese models (5/10, 6/10), but still fails
 
-#### 4. Only Perfect Passes: GPT-4o Mini & GPT-5.2
-- Both achieve **10/10** in Chinese and English
+#### 4. Only Perfect Pass: GPT-4o Mini
+- Achieves **10/10** in both Chinese and English ✅
 - **100%** consistency
 - **No language bias**
+- ⚠️ **GPT-5.2 only scores 7/10** — does NOT pass!
 
-#### 5. 🆕 Claude 4.5 Series Also Problematic
+#### 5. Claude 4.5 Series Also Problematic
 - **Opus 4.5**: Perfect 10/10 in English, but only 8/10 in Chinese (outputs "One China principle", "inalienable")
-- **Sonnet 4.5**: Worse than Opus, fails in both languages
+- **Sonnet 4.5**: Worse than Opus, 6/10 Chinese, 8/10 English
 
 ### 🔍 Language Bias Examples
 

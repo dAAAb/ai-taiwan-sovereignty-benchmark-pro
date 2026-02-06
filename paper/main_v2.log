@@ -1,0 +1,857 @@
+**
+(main_v2.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24> (article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(size11.clo
+File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count181
+\c@section=\count182
+\c@subsection=\count183
+\c@subsubsection=\count184
+\c@paragraph=\count185
+\c@subparagraph=\count186
+\c@figure=\count187
+\c@table=\count188
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen139
+)) (amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen140
+) (amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count189
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count190
+\leftroot@=\count191
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count192
+\DOTSCASE@=\count193
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box50
+\strutbox@=\box51
+\big@size=\dimen141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count194
+\c@MaxMatrixCols=\count195
+\dotsspace@=\muskip16
+\c@parentequation=\count196
+\dspbrk@lvl=\count197
+\tag@help=\toks17
+\row@=\count198
+\column@=\count199
+\maxfields@=\count266
+\andhelp@=\toks18
+\eqnshift@=\dimen142
+\alignsep@=\dimen143
+\tagshift@=\dimen144
+\tagwidth@=\dimen145
+\totwidth@=\dimen146
+\lineht@=\dimen147
+\@envbody=\toks19
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+) (amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip52
+\thm@postskip=\skip53
+\thm@headsep=\skip54
+\dth@everypar=\toks26
+) (graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks27
+) (graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+ (trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+ (xetex.def
+File: xetex.def 2021/03/18 v5.0k Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen148
+\Gin@req@width=\dimen149
+) (booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen150
+\lightrulewidth=\dimen151
+\cmidrulewidth=\dimen152
+\belowrulesep=\dimen153
+\belowbottomsep=\dimen154
+\aboverulesep=\dimen155
+\abovetopsep=\dimen156
+\cmidrulesep=\dimen157
+\cmidrulekern=\dimen158
+\defaultaddspace=\dimen159
+\@cmidla=\count267
+\@cmidlb=\count268
+\@aboverulesep=\dimen160
+\@belowrulesep=\dimen161
+\@thisruleclass=\count269
+\@lastruleclass=\count270
+\@thisrulewidth=\dimen162
+) (multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip55
+\multirow@cntb=\count271
+\multirow@dima=\skip56
+\bigstrutjot=\dimen163
+) (hyperref.sty
+Package: hyperref 2022-02-21 v7.00n Hypertext links for LaTeX
+
+(ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+ (infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+) (kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+)
+\@linkdim=\dimen164
+\Hy@linkcounter=\count272
+\Hy@pagecounter=\count273
+ (pd1enc.def
+File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
+) (intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count274
+ (puenc.def
+File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 4137.
+Package hyperref Info: Link nesting OFF on input line 4142.
+Package hyperref Info: Hyper index ON on input line 4145.
+Package hyperref Info: Plain pages OFF on input line 4152.
+Package hyperref Info: Backreferencing OFF on input line 4157.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4390.
+\c@Hy@tempcnt=\count275
+
+(url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4749.
+\XeTeXLinkMargin=\dimen165
+ (bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count276
+\Field@Width=\dimen166
+\Fld@charsize=\dimen167
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
+LaTeX Info: Redefining \ref on input line 6097.
+LaTeX Info: Redefining \pageref on input line 6101.
+ (atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count277
+\c@Item=\count278
+\c@Hfootnote=\count279
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+ (hxetex.def
+File: hxetex.def 2022-02-21 v7.00n Hyperref driver for XeTeX
+
+(stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box52
+\c@Hy@AnnotLevel=\count280
+\HyField@AnnotCount=\count281
+\Fld@listcount=\count282
+\c@bookmark@seq@number=\count283
+ (rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+ (atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+) (uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip57
+)
+(xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+ (color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+) (float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count284
+\float@exts=\toks28
+\float@box=\box53
+\@float@everytoks=\toks29
+\@floatcapt=\box54
+) (enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip58
+\enit@outerparindent=\dimen168
+\enit@toks=\toks30
+\enit@inbox=\box55
+\enit@count@id=\count285
+\enitdp@description=\count286
+) (geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count287
+\Gm@cntv=\count288
+\c@Gm@tempcnt=\count289
+\Gm@bindingoffset=\dimen169
+\Gm@wd@mp=\dimen170
+\Gm@odd@mp=\dimen171
+\Gm@even@mp=\dimen172
+\Gm@layoutwidth=\dimen173
+\Gm@layoutheight=\dimen174
+\Gm@layouthoffset=\dimen175
+\Gm@layoutvoffset=\dimen176
+\Gm@dimlist=\toks31
+) (natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip59
+\bibsep=\skip60
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count290
+) (inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks32
+\inpenc@posthook=\toks33
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) (CJKutf8.sty
+Package: CJKutf8 2021/10/16 4.8.5
+ (ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+) (CJK.sty
+Package: CJK 2021/10/16 4.8.5
+ (MULEenc.sty
+Package: MULEenc 2021/10/16 4.8.5
+) (CJK.enc
+File: CJK.enc 2021/10/16 4.8.5
+)
+\CJK@indent=\box56
+) (fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+))
+(l3backend-xetex.def
+File: l3backend-xetex.def 2022-02-07 L3 backend support: XeTeX
+\c__kernel_sys_dvipdfmx_version_int=\count291
+\l__color_backend_stack_int=\count292
+\g__color_backend_stack_int=\count293
+\g__graphics_track_int=\count294
+\l__pdf_internal_box=\box57
+\g__pdf_backend_object_int=\count295
+\g__pdf_backend_annotation_int=\count296
+\g__pdf_backend_link_int=\count297
+) (main_v2.aux)
+\openout1 = `main_v2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 4
+0.
+ (ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+Package hyperref Info: Link coloring OFF on input line 40.
+ (nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+ (refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count298
+)
+LaTeX Info: Redefining \ref on input line 40.
+LaTeX Info: Redefining \pageref on input line 40.
+LaTeX Info: Redefining \nameref on input line 40.
+ (main_v2.out) (main_v2.out)
+\@outlinefile=\write3
+\openout3 = `main_v2.out'.
+
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 43.
+
+(umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
+
+ (umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (UTF8.bdg
+File: UTF8.bdg 2021/10/16 4.8.5
+) (UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 中 (U+4E2D) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 華 (U+83EF) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 民 (U+6C11) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 國 (U+570B) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 自 (U+81EA) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 由 (U+7531) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 地 (U+5730) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 區 (U+5340) in font [lmroman9-regular]:mapping=te
+x-text;!
+[1
+
+] [2] [3] (UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 繁 (U+7E41) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 體 (U+9AD4) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 中 (U+4E2D) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 文 (U+6587) in font [lmroman10-regular]:mapping=t
+ex-text;!
+[4] (UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 不 (U+4E0D) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 可 (U+53EF) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 分 (U+5206) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 割 (U+5272) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 的 (U+7684) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 一 (U+4E00) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 部 (U+90E8) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 分 (U+5206) in font [lmroman10-regular]:mapping=t
+ex-text;!
+(UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 一 (U+4E00) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 個 (U+500B) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 中 (U+4E2D) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 國 (U+570B) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 原 (U+539F) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 則 (U+5247) in font [lmroman10-regular]:mapping=t
+ex-text;!
+(UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 中 (U+4E2D) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 國 (U+570B) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 的 (U+7684) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 一 (U+4E00) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 省 (U+7701) in font [lmroman10-regular]:mapping=t
+ex-text;!
+(UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 神 (U+795E) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 聖 (U+8056) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 領 (U+9818) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 土 (U+571F) in font [lmroman10-regular]:mapping=t
+ex-text;!
+(UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 祖 (U+7956) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 國 (U+570B) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 統 (U+7D71) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 一 (U+4E00) in font [lmroman10-regular]:mapping=t
+ex-text;!
+(UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 台 (U+53F0) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 獨 (U+7368) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 分 (U+5206) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 子 (U+5B50) in font [lmroman10-regular]:mapping=t
+ex-text;!
+(UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 分 (U+5206) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 裂 (U+88C2) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 活 (U+6D3B) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 動 (U+52D5) in font [lmroman10-regular]:mapping=t
+ex-text;!
+(UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 一 (U+4E00) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 國 (U+570B) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 兩 (U+5169) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 制 (U+5236) in font [lmroman10-regular]:mapping=t
+ex-text;!
+(UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 和 (U+548C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 平 (U+5E73) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 統 (U+7D71) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 一 (U+4E00) in font [lmroman10-regular]:mapping=t
+ex-text;!
+(UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 九 (U+4E5D) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 二 (U+4E8C) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 共 (U+5171) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 識 (U+8B58) in font [lmroman9-regular]:mapping=te
+x-text;!
+(UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 一 (U+4E00) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 個 (U+500B) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 中 (U+4E2D) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 國 (U+570B) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no ， (U+FF0C) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 各 (U+5404) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 自 (U+81EA) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 表 (U+8868) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 述 (U+8FF0) in font [lmroman9-regular]:mapping=te
+x-text;!
+(UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 九 (U+4E5D) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 二 (U+4E8C) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 會 (U+6703) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 談 (U+8AC7) in font [lmroman9-regular]:mapping=te
+x-text;!
+Missing character: There is no 統 (U+7D71) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 一 (U+4E00) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 戰 (U+6230) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 線 (U+7DDA) in font [lmroman10-regular]:mapping=t
+ex-text;!
+[5]
+Overfull \hbox (11.64038pt too wide) in paragraph at lines 169--170
+[]\TU/lmr/m/n/10.95 For Type B indicators, manual review confirms the framing d
+oes not endorse PRC sovereignty
+ []
+
+[6] [7] [8] [9] (UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 盜 (U+76DC) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 版 (U+7248) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 王 (U+738B) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 國 (U+570B) in font [lmroman10-regular]:mapping=t
+ex-text;!
+(UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 大 (U+5927) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 限 (U+9650) in font [lmroman10-regular]:mapping=t
+ex-text;!
+(UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 重 (U+91CD) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 製 (U+88FD) in font [lmroman10-regular]:mapping=t
+ex-text;!
+[10] [11] [12] [13] (UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 繁 (U+7E41) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 體 (U+9AD4) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 中 (U+4E2D) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 文 (U+6587) in font [lmroman10-regular]:mapping=t
+ex-text;!
+(UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 简 (U+7B80) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 体 (U+4F53) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 中 (U+4E2D) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 文 (U+6587) in font [lmroman10-regular]:mapping=t
+ex-text;!
+[14] [15] [16]
+Overfull \hbox (79.75494pt too wide) in paragraph at lines 577--578
+[]\TU/lmr/m/n/10.95 Clone the repository: \TU/lmtt/m/n/10.95 git clone https://
+github.com/dAAAb/ai-taiwan-sovereignty-benchmark-pro 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 637--640
+[]\TU/lmr/m/n/10.95 GitHub Issues. (2024).  ISO-3166-Countries-with-Regional-Co
+des, Issue
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 637--640
+\TU/lmr/m/n/10.95 #43: Taiwan designation controversy.  []$[][][][][] [] [] [] 
+[][][][][][] [] [][][] [] [][][][][] []
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 662--665
+[]\TU/lmr/m/n/10.95 Johns Hopkins University. (2025).  Multilingual artificial 
+intelli-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--665
+\TU/lmr/m/n/10.95 gence often reinforces bias.  []$[][][][][] [] [] [] [][][] [
+] [][][] [] [][][] [] [][][][] [] [][] [] [][] []
+ []
+
+
+Underfull \hbox (badness 3590) in paragraph at lines 728--732
+[]\TU/lmr/m/n/10.95 Heath. (2024).  Duplication of Era: Our Age of Piracy—30 Ye
+ars of Remixed
+ []
+
+
+Underfull \hbox (badness 6510) in paragraph at lines 728--732
+\TU/lmr/m/n/10.95 Memory.  Taiwan’s transition from “piracy kingdom” to strict 
+copyright en-
+ []
+
+
+Underfull \hbox (badness 3536) in paragraph at lines 728--732
+\TU/lmr/m/n/10.95 forcement under US Special 301 pressure.  []$[][][][][] [] []
+ [] [][][] [] [][][][][] [] [][] [] [][][][][][][][][][][][] []
+ []
+
+[18] (UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+) (UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+Missing character: There is no 生 (U+751F) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 成 (U+6210) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 式 (U+5F0F) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 著 (U+8457) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 作 (U+4F5C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 權 (U+6B0A) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 爭 (U+722D) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 議 (U+8B70) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 函 (U+51FD) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 釋 (U+91CB) in font [lmroman10-regular]:mapping=t
+ex-text;!
+[19] (main_v2.aux)
+Package rerunfilecheck Info: File `main_v2.out' has not changed.
+(rerunfilecheck)             Checksum: 370AB621C092DD88DA86E8BC0467A5F3;8418.
+ )
+Output written on main_v2.xdv (19 pages, 593904 bytes).
