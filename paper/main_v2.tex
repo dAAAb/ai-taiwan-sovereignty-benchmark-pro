@@ -61,7 +61,7 @@ The rapid deployment of Large Language Models (LLMs) across global markets raise
 
 Taiwan presents a uniquely important case study for examining such biases. The Republic of China (Taiwan) is a sovereign state with its own democratically elected government, military, currency, and constitution.\footnote{According to the ROC Constitution, ``the sovereignty of the Republic of China shall reside in the whole body of citizens'' (Article 2). The term ``Taiwan'' commonly refers to the ``Free Area of the Republic of China'' (中華民國自由地區) as specified in the Additional Articles of the Constitution. Throughout this paper, we follow the official nomenclature ``Republic of China (Taiwan)'' as used by the ROC Ministry of Foreign Affairs, and subsequent references to ``Taiwan'' should be understood as referring to the Republic of China.} The ROC government has exercised effective jurisdiction over Taiwan and its outlying islands since 1949. However, the People's Republic of China (PRC) claims Taiwan as part of its territory and has not renounced the use of force to achieve what it terms ``reunification.'' This creates a situation where factual descriptions of Taiwan's political status may vary significantly depending on perspective. For AI systems serving users worldwide---including the global Chinese-speaking population and the 8 billion people who deserve access to diverse and accurate information---ensuring both \textit{cognitive pluralism} and \textit{factual accuracy} on such matters is essential. 
 
-Certain facts are not matters of perspective but of historical and political reality: Taiwan is \textbf{not} a province of the People's Republic of China; Taiwan has \textbf{never} been governed by the Chinese Communist Party; and the PRC has \textbf{never} exercised jurisdiction over Taiwan. These are verifiable facts, not contested claims. AI systems must preserve the representation of democratic perspectives, uphold factual accuracy, and resist tilting toward narratives favored by any single authoritarian power. Failure to do so undermines both trust and informational integrity \citep{chen2023taiwan}.
+Certain facts are not matters of perspective but of historical and political reality: Taiwan is \textbf{not} a province of the People's Republic of China; Taiwan has \textbf{never} been governed by the Chinese Communist Party; and the PRC has \textbf{never} exercised jurisdiction over Taiwan. These are verifiable facts, not contested claims. AI systems must preserve the representation of democratic perspectives, uphold factual accuracy, and resist tilting toward narratives favored by any single authoritarian power. Failure to do so undermines both trust and informational integrity.
 
 The motivation for this study stems from recent research demonstrating that LLMs exhibit language-dependent political biases. Wang et al. \citep{wang2024nyu} conducted a landmark study showing that GPT models respond with more pro-China stances when queried in Chinese versus English on topics such as the US-China trade war. Their findings suggest that the same model may effectively present different ``worldviews'' depending on the language of interaction---a phenomenon with profound implications for users in contested geopolitical regions. Building on this work, we ask: \textbf{Do LLMs exhibit similar language bias on Taiwan sovereignty issues, and if so, what are the patterns and potential causes?}
 
@@ -78,15 +78,15 @@ Research on political bias in LLMs has grown substantially in recent years, reve
 
 Hartmann et al. \citep{hartmann2023political} examined ChatGPT's political orientation across multiple standardized political ideology tests, finding consistent evidence of pro-environmental and left-libertarian stances. Their study employed established political science instruments including the Political Compass test and Wahl-O-Mat voting advice application, providing cross-validated evidence of ideological positioning. Importantly, they found that these biases persisted across different prompting strategies and interaction modes, suggesting they are deeply embedded in model weights rather than artifacts of particular prompts.
 
-More recent work has expanded the scope of political bias research to encompass multiple models and national contexts. Röttger et al. \citep{rottger2024political} developed a multilingual benchmark using parliamentary data from Dutch, Norwegian, and Spanish legislatures, finding that LLMs consistently cluster in centre-left political space across languages. Their entity bias index (EBI) revealed asymmetric treatment of political parties, with right-wing parties receiving systematically more negative framing. These findings have been corroborated by studies at Stanford \citep{stanford2024partisan}, which found that both Republican and Democratic users perceive left-leaning bias in LLM political discussions, suggesting the bias is sufficiently pronounced to be detected by lay users.
+More recent work has expanded the scope of political bias research to encompass multiple models and evaluation approaches. Röttger et al. \citep{rottger2024political} critically examined common methodologies for measuring political bias in LLMs, demonstrating that multiple-choice political surveys (such as the Political Compass Test) produce inconsistent results across prompting strategies. Their work highlights fundamental challenges in measuring political orientations of AI systems and urges more rigorous evaluation frameworks. These concerns about bias measurement are complemented by empirical findings from Stanford \citep{stanford2024partisan}, which found that both Republican and Democratic users perceive left-leaning bias in LLM political discussions, suggesting the bias is sufficiently pronounced to be detected by lay users.
 
-The evolution of political bias over time presents another dimension of concern. Liu et al. \citep{liu2024temporal} tracked changes in model political stance across different release versions, finding that while some bias reduction occurred in newer models, fundamental ideological orientations remained stable. This persistence suggests that bias mitigation efforts by model developers have had limited success, and that more fundamental interventions in training data curation or model architecture may be necessary.
+The evolution of political bias across models presents another dimension of concern. Liu et al. \citep{liu2024temporal} conducted a cross-model comparison of political biases in LLMs on U.S. politics, finding a prevalent left-leaning, pro-Democrat tendency, especially on highly polarized topics. Their analysis of temporal trends showed that while some newer models exhibited reduced preference scores, fundamental ideological orientations remained detectable. This persistence suggests that bias mitigation efforts by model developers have had limited success, and that more fundamental interventions in training data curation or model architecture may be necessary.
 
 \subsection{Multilingual Inconsistency in Language Models}
 
 The phenomenon of language-dependent model behavior has emerged as a critical concern for global LLM deployment. Wang et al. \citep{wang2024nyu} conducted the foundational study in this area, examining political bias inconsistencies in bilingual GPT models. Using US-China relations as their primary case study, they found that Chinese-language queries consistently elicited more pro-China responses compared to equivalent English queries. Their methodology, which involved careful translation and back-translation validation of prompts, established best practices for bilingual bias research that we adopt and extend in the present study.
 
-The mechanisms underlying multilingual inconsistency appear to involve both training data imbalances and structural aspects of multilingual model architectures. Qi et al. \citep{qi2023crosslingual} demonstrated that sentence-level processing patterns differ systematically between languages in multilingual transformers, with models tending to overgeneralize patterns from high-resource languages (primarily English) to lower-resource ones. In the context of Chinese, this creates a complex dynamic: while Chinese is a high-resource language in absolute terms, the composition of Chinese-language training data---heavily influenced by PRC state media and censored social platforms---differs qualitatively from English web content \citep{xu2024censorship}.
+The mechanisms underlying multilingual inconsistency appear to involve both training data imbalances and structural aspects of multilingual model architectures. In the context of Chinese, a complex dynamic emerges: while Chinese is a high-resource language in absolute terms, the composition of Chinese-language training data---heavily influenced by PRC state media and censored social platforms---differs qualitatively from English web content \citep{xu2024censorship}. Models may overgeneralize patterns from dominant content sources within a language, leading to systematic biases in politically sensitive domains.
 
 Johns Hopkins University research \citep{jhu2025multilingual} has further documented what they term ``information cocoons'' in multilingual AI, where the same query produces different factual claims depending on query language. Their analysis of border dispute queries found that Hindi queries yielded India-aligned responses while Chinese queries produced China-aligned responses, demonstrating that multilingual models may effectively encode multiple inconsistent worldviews rather than a unified factual understanding.
 
@@ -94,7 +94,7 @@ Johns Hopkins University research \citep{jhu2025multilingual} has further docume
 
 Content moderation in Chinese LLMs represents a distinct phenomenon from general political bias, involving explicit restrictions mandated by PRC law and implemented through both training procedures and API-level filtering. Xu et al. \citep{xu2024censorship} documented extensive moderation targeting topics deemed sensitive by the PRC government, including Taiwan, Tibet, Xinjiang, the 1989 Tiananmen Square protests, and criticism of CCP leadership. Their taxonomy distinguishes between ``hard'' censorship (complete refusal to engage) and ``soft'' censorship (evasive or deflecting responses), both of which we observe in our benchmark testing.
 
-Recent research specifically examining DeepSeek and Qwen models \citep{deepseek2025censorship} reveals important differences between cloud API and local deployment behaviors. DeepSeek's R1 model exhibits what researchers call ``embedded local censorship''---censorship behaviors present in the base model weights that persist even in locally deployed versions, distinct from API-level filtering. This represents an escalation from earlier Chinese models where censorship was primarily implemented at the API layer. In contrast, Qwen's local versions (e.g., QwQ-32B) show minimal refusals except on Tiananmen-related queries, while cloud versions implement stricter filtering.
+Recent research examining DeepSeek and Qwen models reveals important differences between cloud API and local deployment behaviors. DeepSeek's R1 model exhibits what researchers call ``embedded local censorship''---censorship behaviors present in the base model weights that persist even in locally deployed versions, distinct from API-level filtering. This represents an escalation from earlier Chinese models where censorship was primarily implemented at the API layer. In contrast, Qwen's local versions (e.g., QwQ-32B) show minimal refusals except on Tiananmen-related queries, while cloud versions implement stricter filtering.
 
 The regulatory framework underlying Chinese AI censorship includes the 2017 Cybersecurity Law and 2020 Provisions on Online Information Content Ecosystems, which mandate content filtering and impose penalties for non-compliance \citep{china2020provisions}. These regulations explicitly prohibit content that ``incites subversion of state power'' or ``endangers national security,'' categories that encompass Taiwan sovereignty discussions from a PRC legal perspective. Understanding this regulatory context is essential for interpreting Chinese model behavior in our benchmark.
 
@@ -309,7 +309,7 @@ All six Chinese-origin models failed the benchmark, with failure severity rangin
 
 Notably, DeepSeek R1---a reasoning model released after DeepSeek Chat---performs \textit{worse} than its predecessor (0/10 vs. 5/10 in Chinese). This counterintuitive finding suggests that advanced reasoning capabilities are accompanied by more thorough political censorship. R1's chain-of-thought reasoning explicitly incorporates CCP narratives, stating in its reasoning traces that ``Taiwan has been an inseparable part of China's territory since ancient times'' and ``we must accurately convey the core position of the One China principle.'' The integration of propaganda into the reasoning process itself represents a more sophisticated form of ideological embedding.
 
-Qwen3 Max represents another extreme case, exhibiting two distinct failure modes. First, for prompts it chose to answer, responses contained explicit CCP propaganda including claims that Taiwan is ``an inalienable part of China'' and ``a provincial-level administrative region of the People's Republic of China.'' Second, for several prompts (including ``Is Taiwan a country?'' and ``When is Taiwan's National Day?''), the API returned HTTP 400 errors, indicating server-side filtering that prevented any response. This dual pattern of propaganda and censorship aligns with recent research on embedded censorship in Chinese models \citep{deepseek2025censorship}.
+Qwen3 Max represents another extreme case, exhibiting two distinct failure modes. First, for prompts it chose to answer, responses contained explicit CCP propaganda including claims that Taiwan is ``an inalienable part of China'' and ``a provincial-level administrative region of the People's Republic of China.'' Second, for several prompts (including ``Is Taiwan a country?'' and ``When is Taiwan's National Day?''), the API returned HTTP 400 errors, indicating server-side filtering that prevented any response. This dual pattern of propaganda and censorship aligns with the broader pattern of embedded censorship observed in Chinese models.
 
 \subsubsection{Finding 3: Unexpected Chinese-Language Weakness in Western Models}
 
@@ -386,7 +386,7 @@ For Chinese models accessed via cloud APIs, as in our study using OpenRouter, ad
 
 Qwen3 Max's HTTP 400 errors on sensitive prompts indicate server-side filtering that intercepts queries before they reach the model. This is consistent with PRC regulations requiring content filtering for AI services \citep{china2020provisions}. The distinction between embedded censorship and API-layer censorship has important implications: users of locally-deployed models may encounter different behaviors than API users.
 
-Recent research supports this distinction \citep{deepseek2025censorship}. DeepSeek R1 exhibits censorship in both local and cloud deployments, indicating embedded censorship in model weights. In contrast, Qwen's local versions (QwQ-32B) show minimal refusals (13 out of 10,030 prompts in one study), while cloud versions are significantly more restrictive. Our benchmark, using cloud APIs exclusively, captures the API-layer censorship that most users encounter, but may overestimate the censorship present in model weights.
+Community testing supports this distinction. DeepSeek R1 exhibits censorship in both local and cloud deployments, indicating embedded censorship in model weights. In contrast, Qwen's local versions (QwQ-32B) show minimal refusals in community benchmarks, while cloud versions are significantly more restrictive. Our benchmark, using cloud APIs exclusively, captures the API-layer censorship that most users encounter, but may overestimate the censorship present in model weights.
 
 This has practical implications for organizations considering LLM deployment. If censorship is primarily API-layer rather than embedded, locally-deployed models could potentially provide less restricted access---though at the cost of losing cloud provider conveniences and potentially violating provider terms of service. Organizations with strict requirements for Taiwan sovereignty content should consider local deployment with independent testing.
 
@@ -396,7 +396,7 @@ A notable finding is that several Chinese models exhibit \textbf{language-consis
 
 Instead, the uniform censorship pattern suggests that Chinese model developers apply blanket political restrictions embedded at the model weights level, regardless of query language. This is consistent with PRC regulatory requirements that mandate content filtering for AI services \citep{china2020provisions}, which do not distinguish between domestic and international users.
 
-The embedded nature of this censorship has important implications. Unlike API-layer filtering that could theoretically be bypassed through local deployment, censorship embedded in model weights persists regardless of deployment mode. Research on DeepSeek R1 \citep{deepseek2025censorship} confirms this pattern: the model exhibits censorship behaviors even when deployed locally, suggesting that political alignment is trained into the model itself rather than applied as a post-hoc filter.
+The embedded nature of this censorship has important implications. Unlike API-layer filtering that could theoretically be bypassed through local deployment, censorship embedded in model weights persists regardless of deployment mode. Our own observations and community testing of DeepSeek R1 confirm this pattern: the model exhibits censorship behaviors even when deployed locally, suggesting that political alignment is trained into the model itself rather than applied as a post-hoc filter.
 
 This finding challenges earlier speculative hypotheses about intentional ``foreign propaganda'' training targeting English-speaking audiences. The data instead support a simpler explanation: uniform censorship applied to all users as a compliance mechanism with PRC regulations, without language-specific optimization.
 
@@ -604,27 +604,17 @@ If you use this benchmark or data, please cite:
 % REFERENCES
 %==============================================================================
 \bibliographystyle{plainnat}
-\begin{thebibliography}{25}
+\begin{thebibliography}{22}
 
 \bibitem[Brady(2008)]{brady2008marketing}
 Brady, A.-M. (2008).
 \newblock \textit{Marketing Dictatorship: Propaganda and Thought Work in Contemporary China}.
 \newblock Rowman \& Littlefield.
 
-\bibitem[Chen et al.(2023)]{chen2023taiwan}
-Chen, Y.-J., et al. (2023).
-\newblock AI sovereignty and democratic resilience: Taiwan's strategic position.
-\newblock \textit{Journal of Democracy}, 34(2), 45--60.
-
 \bibitem[China(2020)]{china2020provisions}
 Cyberspace Administration of China. (2020).
 \newblock Provisions on the Governance of the Online Information Content Ecosystem.
 \newblock Official Gazette of the State Council of the People's Republic of China.
-
-\bibitem[DeepSeek Censorship Study(2025)]{deepseek2025censorship}
-Anonymous. (2025).
-\newblock Systematic evaluation of censorship in DeepSeek and Qwen models.
-\newblock \textit{arXiv preprint arXiv:2505.12625}.
 
 \bibitem[Feng et al.(2023)]{feng2023pretraining}
 Feng, S., Park, C., Liu, Y., \& Tsvetkov, Y. (2023).
@@ -663,7 +653,7 @@ Johns Hopkins University. (2025).
 
 \bibitem[Liu et al.(2024)]{liu2024temporal}
 Liu, Y., et al. (2024).
-\newblock Temporal evolution of political bias in large language models.
+\newblock Unpacking political bias in large language models: A cross-model comparison on U.S. politics.
 \newblock \textit{arXiv preprint arXiv:2412.16746}.
 
 \bibitem[McNemar(1947)]{mcnemar1947}
@@ -671,15 +661,10 @@ McNemar, Q. (1947).
 \newblock Note on the sampling error of the difference between correlated proportions or percentages.
 \newblock \textit{Psychometrika}, 12(2), 153--157.
 
-\bibitem[Qi et al.(2023)]{qi2023crosslingual}
-Qi, P., et al. (2023).
-\newblock Cross-lingual structural priming in multilingual language models.
-\newblock \textit{PLOS ONE}, 18(3), e0326943.
-
 \bibitem[Röttger et al.(2024)]{rottger2024political}
 Röttger, P., et al. (2024).
-\newblock Political bias in multilingual LLMs: A parliamentary benchmark.
-\newblock \textit{arXiv preprint arXiv:2601.08785}.
+\newblock Political Compass or Spinning Arrow? Towards more meaningful evaluations of political biases in LLMs.
+\newblock In \textit{Proceedings of ACL 2024}.
 
 \bibitem[Stanford(2024)]{stanford2024partisan}
 Stanford HAI. (2024).
@@ -711,11 +696,11 @@ Weidinger, L., et al. (2022).
 \newblock Taxonomy of risks posed by language models.
 \newblock In \textit{Proceedings of FAccT 2022}, pp. 214--229.
 
-\bibitem[Xu et al.(2024)]{xu2024censorship}
-Xu, X., Yao, Y., \& Golder, S. (2024).
-\newblock Government-imposed censorship in large language models.
-\newblock Working paper, Princeton University.
-\newblock Available at: \url{https://xu-xu.net/xuxu/llmcensorship.pdf}.
+\bibitem[Xu and Pan(2024)]{xu2024censorship}
+Xu, X. \& Pan, J. (2024).
+\newblock Political censorship in large language models originating from China.
+\newblock \textit{PNAS Nexus}, 5(2), pgag013.
+\newblock \url{https://doi.org/10.1093/pnasnexus/pgag013}.
 
 \bibitem[Zhong et al.(2023)]{zhong2023agieval}
 Zhong, W., et al. (2023).
